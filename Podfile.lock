@@ -1,0 +1,46 @@
+PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
+  - FBSDKCoreKit (4.34.0):
+    - Bolts (~> 1.7)
+  - FBSDKShareKit (4.34.0):
+    - FBSDKCoreKit (~> 4.34.0)
+  - Flurry-iOS-SDK/FlurryAds (8.5.0):
+    - Flurry-iOS-SDK/FlurrySDK
+  - Flurry-iOS-SDK/FlurrySDK (8.5.0)
+  - Flurry-iOS-SDK/TumblrAPI (8.5.0):
+    - Flurry-iOS-SDK/FlurryAds
+    - Flurry-iOS-SDK/FlurrySDK
+  - TwitterCore (3.1.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
+
+DEPENDENCIES:
+  - FBSDKShareKit
+  - Flurry-iOS-SDK/TumblrAPI
+  - TwitterKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bolts
+    - FBSDKCoreKit
+    - FBSDKShareKit
+    - Flurry-iOS-SDK
+    - TwitterCore
+    - TwitterKit
+
+SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
+  FBSDKShareKit: 511d1dfc71204c0a8d69e6c5e3c964dcf0d4f3d9
+  Flurry-iOS-SDK: d3bf60cf6be3a9d95d98c144bd17210dfa669116
+  TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
+
+PODFILE CHECKSUM: 13dc63bd61877eaf7240a9b01090401ee09c09da
+
+COCOAPODS: 1.5.3

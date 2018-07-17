@@ -1,0 +1,1318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		106A2794E08DBEF05456F141 /* Pods_share.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B909F0E2DDC37B9F9336CFC /* Pods_share.framework */; };
+		B00B2663BE2769A15D952B51 /* Pods_sharekit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB1CD86B16AB472A19DE434 /* Pods_sharekit.framework */; };
+		CF04A14920A29836008AFCC8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF04A14820A29836008AFCC8 /* AppDelegate.m */; };
+		CF04A14F20A29836008AFCC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF04A14D20A29836008AFCC8 /* Main.storyboard */; };
+		CF04A15120A29837008AFCC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF04A15020A29837008AFCC8 /* Assets.xcassets */; };
+		CF04A15420A29837008AFCC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF04A15220A29837008AFCC8 /* LaunchScreen.storyboard */; };
+		CF04A15720A29837008AFCC8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF04A15620A29837008AFCC8 /* main.m */; };
+		CF04A16120A29837008AFCC8 /* shareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF04A16020A29837008AFCC8 /* shareTests.m */; };
+		CF04A16C20A29837008AFCC8 /* shareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF04A16B20A29837008AFCC8 /* shareUITests.m */; };
+		CF1A1C6420E1D90000128E31 /* RTumblrManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1A1C6220E1D90000128E31 /* RTumblrManager.h */; };
+		CF1A1C6520E1D90000128E31 /* RTumblrManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1A1C6320E1D90000128E31 /* RTumblrManager.m */; };
+		CF21E23420E0DD4F00B6BA74 /* RWhatsAppManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF21E23220E0DD4F00B6BA74 /* RWhatsAppManager.h */; };
+		CF21E23520E0DD4F00B6BA74 /* RWhatsAppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF21E23320E0DD4F00B6BA74 /* RWhatsAppManager.m */; };
+		CF3F68CC20C781E700AA0DCE /* RSinaWeiboManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF3F68CA20C781E700AA0DCE /* RSinaWeiboManager.h */; };
+		CF3F68CD20C781E700AA0DCE /* RSinaWeiboManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F68CB20C781E700AA0DCE /* RSinaWeiboManager.m */; };
+		CF3F68F320C7B80700AA0DCE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E7B20C67EEF00F0EFF9 /* Security.framework */; };
+		CF3F68F520C7B9A900AA0DCE /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3F68F420C7B9A900AA0DCE /* Photos.framework */; };
+		CF50350720DC97F9007497FF /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF50350620DC97F9007497FF /* TencentOpenAPI.framework */; };
+		CF50350820DC97F9007497FF /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF50350620DC97F9007497FF /* TencentOpenAPI.framework */; };
+		CF50351B20DCC8DE007497FF /* RGooglePlusManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF50351920DCC8DE007497FF /* RGooglePlusManager.h */; };
+		CF50351D20DCC8DE007497FF /* RGooglePlusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF50351A20DCC8DE007497FF /* RGooglePlusManager.m */; };
+		CF50352020DCC9C3007497FF /* RQqHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CF50351E20DCC9C3007497FF /* RQqHelper.h */; };
+		CF50352120DCC9C3007497FF /* RQqHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CF50351F20DCC9C3007497FF /* RQqHelper.m */; };
+		CF50352320DCCECA007497FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF50352220DCCECA007497FF /* ViewController.m */; };
+		CF5C7D2B20BE326900B96666 /* sharekit.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D2920BE326900B96666 /* sharekit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF5C7D2E20BE326900B96666 /* sharekit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF5C7D2720BE326900B96666 /* sharekit.framework */; };
+		CF5C7D2F20BE326900B96666 /* sharekit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF5C7D2720BE326900B96666 /* sharekit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF5C7D3620BE341F00B96666 /* RFacebookManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D3420BE341F00B96666 /* RFacebookManager.h */; };
+		CF5C7D3720BE341F00B96666 /* RFacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D3520BE341F00B96666 /* RFacebookManager.m */; };
+		CF5C7D4520BE3F2500B96666 /* RShare.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D4320BE3F2500B96666 /* RShare.h */; };
+		CF5C7D4620BE3F2500B96666 /* RShare.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D4420BE3F2500B96666 /* RShare.m */; };
+		CF5C7D4A20BE3FE800B96666 /* RPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D4820BE3FE800B96666 /* RPlatform.h */; };
+		CF5C7D4B20BE3FE800B96666 /* RPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D4920BE3FE800B96666 /* RPlatform.m */; };
+		CF5C7D4E20BE415100B96666 /* RRegister.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D4C20BE415100B96666 /* RRegister.h */; };
+		CF5C7D4F20BE415100B96666 /* RRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D4D20BE415100B96666 /* RRegister.m */; };
+		CF5C7D5620BE469200B96666 /* RFacebookHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D5420BE469200B96666 /* RFacebookHelper.h */; };
+		CF5C7D5720BE469200B96666 /* RFacebookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D5520BE469200B96666 /* RFacebookHelper.m */; };
+		CF5C7D6820BE979100B96666 /* RTwitterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D6620BE979100B96666 /* RTwitterManager.h */; };
+		CF5C7D6920BE979100B96666 /* RTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D6720BE979100B96666 /* RTwitterManager.m */; };
+		CF8FD71E20E7A8450017A83F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8FD71D20E7A8450017A83F /* libWeChatSDK.a */; };
+		CFA0781320E4CE890058018D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA0781220E4CE890058018D /* AssetsLibrary.framework */; };
+		CFBBBCCA20C12A7E00F5FDA5 /* RInstagramManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBBBCC820C12A7E00F5FDA5 /* RInstagramManager.h */; };
+		CFBBBCCB20C12A7E00F5FDA5 /* RInstagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBBCC920C12A7E00F5FDA5 /* RInstagramManager.m */; };
+		CFC285F020F8A56000DE7CDF /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFC285E920F8A56000DE7CDF /* WeiboSDK.bundle */; };
+		CFC285F120F8A56000DE7CDF /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC285EA20F8A56000DE7CDF /* libWeiboSDK.a */; };
+		CFC400D820FC80650003EA8A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E7D20C67EFE00F0EFF9 /* CoreTelephony.framework */; };
+		CFD133DA20E37C39004CED6C /* RShareManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD133D820E37C39004CED6C /* RShareManager.h */; };
+		CFD133DB20E37C39004CED6C /* RShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD133D920E37C39004CED6C /* RShareManager.m */; };
+		CFD26E6820C677B800F0EFF9 /* RWechatManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD26E6620C677B800F0EFF9 /* RWechatManager.h */; };
+		CFD26E6920C677B800F0EFF9 /* RWechatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD26E6720C677B800F0EFF9 /* RWechatManager.m */; };
+		CFD26E8220C67F2A00F0EFF9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E8120C67F2900F0EFF9 /* libc++.tbd */; };
+		CFD26E8420C67F3C00F0EFF9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E8320C67F3C00F0EFF9 /* libsqlite3.0.tbd */; };
+		CFD26E8620C67F4500F0EFF9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E8520C67F4500F0EFF9 /* libz.tbd */; };
+		CFD26E8720C67FCC00F0EFF9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD26E7F20C67F0C00F0EFF9 /* SystemConfiguration.framework */; };
+		CFD26E8A20C6811300F0EFF9 /* RWechatHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD26E8820C6811300F0EFF9 /* RWechatHelper.h */; };
+		CFD26E8B20C6811300F0EFF9 /* RWechatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD26E8920C6811300F0EFF9 /* RWechatHelper.m */; };
+		CFD733EB20BF8CEF006483E2 /* RTwitterAuthHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD733E920BF8CEF006483E2 /* RTwitterAuthHelper.h */; };
+		CFD733EC20BF8CEF006483E2 /* RTwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD733EA20BF8CEF006483E2 /* RTwitterAuthHelper.m */; };
+		CFE6078E20DB4EDC007A60C2 /* RQqManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE6078C20DB4EDC007A60C2 /* RQqManager.h */; };
+		CFE6078F20DB4EDC007A60C2 /* RQqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE6078D20DB4EDC007A60C2 /* RQqManager.m */; };
+		CFF3303320F6EE8A0018D6F3 /* Liberation.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CFF3303020F6EE890018D6F3 /* Liberation.pdf */; };
+		CFF3303420F6EE8A0018D6F3 /* ca.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CFF3303120F6EE890018D6F3 /* ca.mp4 */; };
+		CFF3303520F6EE8A0018D6F3 /* list.docx in Resources */ = {isa = PBXBuildFile; fileRef = CFF3303220F6EE890018D6F3 /* list.docx */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF04A15D20A29837008AFCC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF04A13C20A29836008AFCC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF04A14320A29836008AFCC8;
+			remoteInfo = share;
+		};
+		CF04A16820A29837008AFCC8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF04A13C20A29836008AFCC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF04A14320A29836008AFCC8;
+			remoteInfo = share;
+		};
+		CF5C7D2C20BE326900B96666 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF04A13C20A29836008AFCC8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF5C7D2620BE326900B96666;
+			remoteInfo = sharekit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF5C7D3320BE326900B96666 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF5C7D2F20BE326900B96666 /* sharekit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		043518390208CD879D792B26 /* Pods-sharekit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sharekit.release.xcconfig"; path = "Pods/Target Support Files/Pods-sharekit/Pods-sharekit.release.xcconfig"; sourceTree = "<group>"; };
+		1B909F0E2DDC37B9F9336CFC /* Pods_share.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B0A1F34C1DFEAD156D86795 /* Pods-sharekit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sharekit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sharekit/Pods-sharekit.debug.xcconfig"; sourceTree = "<group>"; };
+		2FB1CD86B16AB472A19DE434 /* Pods_sharekit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sharekit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDEDB4EC074DE6A771B00D5 /* Pods-share.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share.release.xcconfig"; path = "Pods/Target Support Files/Pods-share/Pods-share.release.xcconfig"; sourceTree = "<group>"; };
+		CF04A14420A29836008AFCC8 /* share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = share.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF04A14720A29836008AFCC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF04A14820A29836008AFCC8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF04A14A20A29836008AFCC8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CF04A14E20A29836008AFCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF04A15020A29837008AFCC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF04A15320A29837008AFCC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF04A15520A29837008AFCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF04A15620A29837008AFCC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF04A15C20A29837008AFCC8 /* shareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF04A16020A29837008AFCC8 /* shareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shareTests.m; sourceTree = "<group>"; };
+		CF04A16220A29837008AFCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF04A16720A29837008AFCC8 /* shareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = shareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF04A16B20A29837008AFCC8 /* shareUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = shareUITests.m; sourceTree = "<group>"; };
+		CF04A16D20A29837008AFCC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF1A1C6220E1D90000128E31 /* RTumblrManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTumblrManager.h; sourceTree = "<group>"; };
+		CF1A1C6320E1D90000128E31 /* RTumblrManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTumblrManager.m; sourceTree = "<group>"; };
+		CF21E23220E0DD4F00B6BA74 /* RWhatsAppManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWhatsAppManager.h; sourceTree = "<group>"; };
+		CF21E23320E0DD4F00B6BA74 /* RWhatsAppManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWhatsAppManager.m; sourceTree = "<group>"; };
+		CF3F68CA20C781E700AA0DCE /* RSinaWeiboManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSinaWeiboManager.h; sourceTree = "<group>"; };
+		CF3F68CB20C781E700AA0DCE /* RSinaWeiboManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSinaWeiboManager.m; sourceTree = "<group>"; };
+		CF3F68E320C7B6CD00AA0DCE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF3F68E620C7B6E300AA0DCE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		CF3F68E820C7B6EF00AA0DCE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CF3F68EA20C7B6FB00AA0DCE /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		CF3F68F420C7B9A900AA0DCE /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		CF50350620DC97F9007497FF /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TencentOpenAPI.framework; path = thirdSdk/TencentOpenAPI.framework; sourceTree = "<group>"; };
+		CF50351920DCC8DE007497FF /* RGooglePlusManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGooglePlusManager.h; sourceTree = "<group>"; };
+		CF50351A20DCC8DE007497FF /* RGooglePlusManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGooglePlusManager.m; sourceTree = "<group>"; };
+		CF50351E20DCC9C3007497FF /* RQqHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQqHelper.h; sourceTree = "<group>"; };
+		CF50351F20DCC9C3007497FF /* RQqHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQqHelper.m; sourceTree = "<group>"; };
+		CF50352220DCCECA007497FF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CF5C7D2720BE326900B96666 /* sharekit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sharekit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5C7D2920BE326900B96666 /* sharekit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sharekit.h; sourceTree = "<group>"; };
+		CF5C7D2A20BE326900B96666 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF5C7D3420BE341F00B96666 /* RFacebookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFacebookManager.h; sourceTree = "<group>"; };
+		CF5C7D3520BE341F00B96666 /* RFacebookManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFacebookManager.m; sourceTree = "<group>"; };
+		CF5C7D4320BE3F2500B96666 /* RShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RShare.h; sourceTree = "<group>"; };
+		CF5C7D4420BE3F2500B96666 /* RShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RShare.m; sourceTree = "<group>"; };
+		CF5C7D4820BE3FE800B96666 /* RPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPlatform.h; sourceTree = "<group>"; };
+		CF5C7D4920BE3FE800B96666 /* RPlatform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPlatform.m; sourceTree = "<group>"; };
+		CF5C7D4C20BE415100B96666 /* RRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRegister.h; sourceTree = "<group>"; };
+		CF5C7D4D20BE415100B96666 /* RRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRegister.m; sourceTree = "<group>"; };
+		CF5C7D5420BE469200B96666 /* RFacebookHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFacebookHelper.h; sourceTree = "<group>"; };
+		CF5C7D5520BE469200B96666 /* RFacebookHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFacebookHelper.m; sourceTree = "<group>"; };
+		CF5C7D6620BE979100B96666 /* RTwitterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTwitterManager.h; sourceTree = "<group>"; };
+		CF5C7D6720BE979100B96666 /* RTwitterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTwitterManager.m; sourceTree = "<group>"; };
+		CF8FD71A20E7A8450017A83F /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		CF8FD71B20E7A8450017A83F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		CF8FD71C20E7A8450017A83F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		CF8FD71D20E7A8450017A83F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		CFA0781220E4CE890058018D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		CFBBBCC820C12A7E00F5FDA5 /* RInstagramManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RInstagramManager.h; sourceTree = "<group>"; };
+		CFBBBCC920C12A7E00F5FDA5 /* RInstagramManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RInstagramManager.m; sourceTree = "<group>"; };
+		CFC285E920F8A56000DE7CDF /* WeiboSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WeiboSDK.bundle; sourceTree = "<group>"; };
+		CFC285EA20F8A56000DE7CDF /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
+		CFC285EB20F8A56000DE7CDF /* WBHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBHttpRequest.h; sourceTree = "<group>"; };
+		CFC285EC20F8A56000DE7CDF /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
+		CFD133D820E37C39004CED6C /* RShareManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RShareManager.h; sourceTree = "<group>"; };
+		CFD133D920E37C39004CED6C /* RShareManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RShareManager.m; sourceTree = "<group>"; };
+		CFD26E6620C677B800F0EFF9 /* RWechatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWechatManager.h; sourceTree = "<group>"; };
+		CFD26E6720C677B800F0EFF9 /* RWechatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWechatManager.m; sourceTree = "<group>"; };
+		CFD26E7B20C67EEF00F0EFF9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CFD26E7D20C67EFE00F0EFF9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		CFD26E7F20C67F0C00F0EFF9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CFD26E8120C67F2900F0EFF9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CFD26E8320C67F3C00F0EFF9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CFD26E8520C67F4500F0EFF9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CFD26E8820C6811300F0EFF9 /* RWechatHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWechatHelper.h; sourceTree = "<group>"; };
+		CFD26E8920C6811300F0EFF9 /* RWechatHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWechatHelper.m; sourceTree = "<group>"; };
+		CFD733E920BF8CEF006483E2 /* RTwitterAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTwitterAuthHelper.h; sourceTree = "<group>"; };
+		CFD733EA20BF8CEF006483E2 /* RTwitterAuthHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTwitterAuthHelper.m; sourceTree = "<group>"; };
+		CFE6078C20DB4EDC007A60C2 /* RQqManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQqManager.h; sourceTree = "<group>"; };
+		CFE6078D20DB4EDC007A60C2 /* RQqManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQqManager.m; sourceTree = "<group>"; };
+		CFF3303020F6EE890018D6F3 /* Liberation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Liberation.pdf; sourceTree = "<group>"; };
+		CFF3303120F6EE890018D6F3 /* ca.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ca.mp4; sourceTree = "<group>"; };
+		CFF3303220F6EE890018D6F3 /* list.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = list.docx; sourceTree = "<group>"; };
+		D0D5ACFC5E152BCD005D0BE1 /* Pods-share.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share/Pods-share.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF04A14120A29836008AFCC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFC400D820FC80650003EA8A /* CoreTelephony.framework in Frameworks */,
+				CFA0781320E4CE890058018D /* AssetsLibrary.framework in Frameworks */,
+				CF3F68F520C7B9A900AA0DCE /* Photos.framework in Frameworks */,
+				CF50350720DC97F9007497FF /* TencentOpenAPI.framework in Frameworks */,
+				CF3F68F320C7B80700AA0DCE /* Security.framework in Frameworks */,
+				CFD26E8720C67FCC00F0EFF9 /* SystemConfiguration.framework in Frameworks */,
+				CF8FD71E20E7A8450017A83F /* libWeChatSDK.a in Frameworks */,
+				CFD26E8620C67F4500F0EFF9 /* libz.tbd in Frameworks */,
+				CFD26E8420C67F3C00F0EFF9 /* libsqlite3.0.tbd in Frameworks */,
+				CFC285F120F8A56000DE7CDF /* libWeiboSDK.a in Frameworks */,
+				CFD26E8220C67F2A00F0EFF9 /* libc++.tbd in Frameworks */,
+				CF5C7D2E20BE326900B96666 /* sharekit.framework in Frameworks */,
+				106A2794E08DBEF05456F141 /* Pods_share.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A15920A29837008AFCC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A16420A29837008AFCC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5C7D2320BE326900B96666 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF50350820DC97F9007497FF /* TencentOpenAPI.framework in Frameworks */,
+				B00B2663BE2769A15D952B51 /* Pods_sharekit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		310B31686D6B1C1E2A725AB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0D5ACFC5E152BCD005D0BE1 /* Pods-share.debug.xcconfig */,
+				4BDEDB4EC074DE6A771B00D5 /* Pods-share.release.xcconfig */,
+				2B0A1F34C1DFEAD156D86795 /* Pods-sharekit.debug.xcconfig */,
+				043518390208CD879D792B26 /* Pods-sharekit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF04A13B20A29836008AFCC8 = {
+			isa = PBXGroup;
+			children = (
+				CF04A14620A29836008AFCC8 /* share */,
+				CF04A15F20A29837008AFCC8 /* shareTests */,
+				CF04A16A20A29837008AFCC8 /* shareUITests */,
+				CF5C7D2820BE326900B96666 /* sharekit */,
+				CF04A14520A29836008AFCC8 /* Products */,
+				CF5C7D3920BE370900B96666 /* Frameworks */,
+				310B31686D6B1C1E2A725AB7 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CF04A14520A29836008AFCC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF04A14420A29836008AFCC8 /* share.app */,
+				CF04A15C20A29837008AFCC8 /* shareTests.xctest */,
+				CF04A16720A29837008AFCC8 /* shareUITests.xctest */,
+				CF5C7D2720BE326900B96666 /* sharekit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF04A14620A29836008AFCC8 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				CFF3302F20F6EE6E0018D6F3 /* resource */,
+				CF04A14720A29836008AFCC8 /* AppDelegate.h */,
+				CF04A14820A29836008AFCC8 /* AppDelegate.m */,
+				CF04A14A20A29836008AFCC8 /* ViewController.h */,
+				CF50352220DCCECA007497FF /* ViewController.m */,
+				CF04A14D20A29836008AFCC8 /* Main.storyboard */,
+				CF04A15020A29837008AFCC8 /* Assets.xcassets */,
+				CF04A15220A29837008AFCC8 /* LaunchScreen.storyboard */,
+				CF04A15520A29837008AFCC8 /* Info.plist */,
+				CF04A15620A29837008AFCC8 /* main.m */,
+			);
+			path = share;
+			sourceTree = "<group>";
+		};
+		CF04A15F20A29837008AFCC8 /* shareTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF04A16020A29837008AFCC8 /* shareTests.m */,
+				CF04A16220A29837008AFCC8 /* Info.plist */,
+			);
+			path = shareTests;
+			sourceTree = "<group>";
+		};
+		CF04A16A20A29837008AFCC8 /* shareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF04A16B20A29837008AFCC8 /* shareUITests.m */,
+				CF04A16D20A29837008AFCC8 /* Info.plist */,
+			);
+			path = shareUITests;
+			sourceTree = "<group>";
+		};
+		CF1A1C6120E1D8BD00128E31 /* tumblr */ = {
+			isa = PBXGroup;
+			children = (
+				CF1A1C6220E1D90000128E31 /* RTumblrManager.h */,
+				CF1A1C6320E1D90000128E31 /* RTumblrManager.m */,
+			);
+			path = tumblr;
+			sourceTree = "<group>";
+		};
+		CF21E23120E0DD2A00B6BA74 /* whatsapp */ = {
+			isa = PBXGroup;
+			children = (
+				CF21E23220E0DD4F00B6BA74 /* RWhatsAppManager.h */,
+				CF21E23320E0DD4F00B6BA74 /* RWhatsAppManager.m */,
+			);
+			path = whatsapp;
+			sourceTree = "<group>";
+		};
+		CF3F68C920C781CA00AA0DCE /* sina */ = {
+			isa = PBXGroup;
+			children = (
+				CF3F68CA20C781E700AA0DCE /* RSinaWeiboManager.h */,
+				CF3F68CB20C781E700AA0DCE /* RSinaWeiboManager.m */,
+			);
+			path = sina;
+			sourceTree = "<group>";
+		};
+		CF50351820DCC8BD007497FF /* googleplus */ = {
+			isa = PBXGroup;
+			children = (
+				CF50351920DCC8DE007497FF /* RGooglePlusManager.h */,
+				CF50351A20DCC8DE007497FF /* RGooglePlusManager.m */,
+			);
+			path = googleplus;
+			sourceTree = "<group>";
+		};
+		CF5C7D2820BE326900B96666 /* sharekit */ = {
+			isa = PBXGroup;
+			children = (
+				CF1A1C6120E1D8BD00128E31 /* tumblr */,
+				CF21E23120E0DD2A00B6BA74 /* whatsapp */,
+				CF50351820DCC8BD007497FF /* googleplus */,
+				CFE6078B20DB4EC3007A60C2 /* qq */,
+				CF3F68C920C781CA00AA0DCE /* sina */,
+				CFD26E6520C6755800F0EFF9 /* wechat */,
+				CFBBBCC720C12A3700F5FDA5 /* instagram */,
+				CF5C7D4720BE3FCF00B96666 /* twitter */,
+				CF5C7D4220BE3CEF00B96666 /* facebook */,
+				CF5C7D2920BE326900B96666 /* sharekit.h */,
+				CF5C7D2A20BE326900B96666 /* Info.plist */,
+				CF5C7D4320BE3F2500B96666 /* RShare.h */,
+				CF5C7D4420BE3F2500B96666 /* RShare.m */,
+				CF5C7D4820BE3FE800B96666 /* RPlatform.h */,
+				CF5C7D4920BE3FE800B96666 /* RPlatform.m */,
+				CF5C7D4C20BE415100B96666 /* RRegister.h */,
+				CF5C7D4D20BE415100B96666 /* RRegister.m */,
+				CFD133D820E37C39004CED6C /* RShareManager.h */,
+				CFD133D920E37C39004CED6C /* RShareManager.m */,
+			);
+			path = sharekit;
+			sourceTree = "<group>";
+		};
+		CF5C7D3920BE370900B96666 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC285E820F8A56000DE7CDF /* libWeiboSDK */,
+				CF8FD71920E7A8450017A83F /* WechatSDK1.8.2 */,
+				CFA0781220E4CE890058018D /* AssetsLibrary.framework */,
+				CF50350620DC97F9007497FF /* TencentOpenAPI.framework */,
+				CF3F68F420C7B9A900AA0DCE /* Photos.framework */,
+				CF3F68EA20C7B6FB00AA0DCE /* ImageIO.framework */,
+				CF3F68E820C7B6EF00AA0DCE /* QuartzCore.framework */,
+				CF3F68E620C7B6E300AA0DCE /* CoreText.framework */,
+				CF3F68E320C7B6CD00AA0DCE /* CoreGraphics.framework */,
+				CFD26E8520C67F4500F0EFF9 /* libz.tbd */,
+				CFD26E8320C67F3C00F0EFF9 /* libsqlite3.0.tbd */,
+				CFD26E8120C67F2900F0EFF9 /* libc++.tbd */,
+				CFD26E7F20C67F0C00F0EFF9 /* SystemConfiguration.framework */,
+				CFD26E7D20C67EFE00F0EFF9 /* CoreTelephony.framework */,
+				CFD26E7B20C67EEF00F0EFF9 /* Security.framework */,
+				1B909F0E2DDC37B9F9336CFC /* Pods_share.framework */,
+				2FB1CD86B16AB472A19DE434 /* Pods_sharekit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF5C7D4220BE3CEF00B96666 /* facebook */ = {
+			isa = PBXGroup;
+			children = (
+				CF5C7D3420BE341F00B96666 /* RFacebookManager.h */,
+				CF5C7D3520BE341F00B96666 /* RFacebookManager.m */,
+				CF5C7D5420BE469200B96666 /* RFacebookHelper.h */,
+				CF5C7D5520BE469200B96666 /* RFacebookHelper.m */,
+			);
+			path = facebook;
+			sourceTree = "<group>";
+		};
+		CF5C7D4720BE3FCF00B96666 /* twitter */ = {
+			isa = PBXGroup;
+			children = (
+				CF5C7D6620BE979100B96666 /* RTwitterManager.h */,
+				CF5C7D6720BE979100B96666 /* RTwitterManager.m */,
+				CFD733E920BF8CEF006483E2 /* RTwitterAuthHelper.h */,
+				CFD733EA20BF8CEF006483E2 /* RTwitterAuthHelper.m */,
+			);
+			path = twitter;
+			sourceTree = "<group>";
+		};
+		CF8FD71920E7A8450017A83F /* WechatSDK1.8.2 */ = {
+			isa = PBXGroup;
+			children = (
+				CF8FD71A20E7A8450017A83F /* WXApi.h */,
+				CF8FD71B20E7A8450017A83F /* WXApiObject.h */,
+				CF8FD71C20E7A8450017A83F /* WechatAuthSDK.h */,
+				CF8FD71D20E7A8450017A83F /* libWeChatSDK.a */,
+			);
+			name = WechatSDK1.8.2;
+			path = thirdSdk/WechatSDK1.8.2;
+			sourceTree = "<group>";
+		};
+		CFBBBCC720C12A3700F5FDA5 /* instagram */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBBCC820C12A7E00F5FDA5 /* RInstagramManager.h */,
+				CFBBBCC920C12A7E00F5FDA5 /* RInstagramManager.m */,
+			);
+			path = instagram;
+			sourceTree = "<group>";
+		};
+		CFC285E820F8A56000DE7CDF /* libWeiboSDK */ = {
+			isa = PBXGroup;
+			children = (
+				CFC285E920F8A56000DE7CDF /* WeiboSDK.bundle */,
+				CFC285EA20F8A56000DE7CDF /* libWeiboSDK.a */,
+				CFC285EB20F8A56000DE7CDF /* WBHttpRequest.h */,
+				CFC285EC20F8A56000DE7CDF /* WeiboSDK.h */,
+			);
+			name = libWeiboSDK;
+			path = thirdSdk/libWeiboSDK;
+			sourceTree = "<group>";
+		};
+		CFD26E6520C6755800F0EFF9 /* wechat */ = {
+			isa = PBXGroup;
+			children = (
+				CFD26E6620C677B800F0EFF9 /* RWechatManager.h */,
+				CFD26E6720C677B800F0EFF9 /* RWechatManager.m */,
+				CFD26E8820C6811300F0EFF9 /* RWechatHelper.h */,
+				CFD26E8920C6811300F0EFF9 /* RWechatHelper.m */,
+			);
+			path = wechat;
+			sourceTree = "<group>";
+		};
+		CFE6078B20DB4EC3007A60C2 /* qq */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6078C20DB4EDC007A60C2 /* RQqManager.h */,
+				CFE6078D20DB4EDC007A60C2 /* RQqManager.m */,
+				CF50351E20DCC9C3007497FF /* RQqHelper.h */,
+				CF50351F20DCC9C3007497FF /* RQqHelper.m */,
+			);
+			path = qq;
+			sourceTree = "<group>";
+		};
+		CFF3302F20F6EE6E0018D6F3 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				CFF3303120F6EE890018D6F3 /* ca.mp4 */,
+				CFF3303020F6EE890018D6F3 /* Liberation.pdf */,
+				CFF3303220F6EE890018D6F3 /* list.docx */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CF5C7D2420BE326900B96666 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF21E23420E0DD4F00B6BA74 /* RWhatsAppManager.h in Headers */,
+				CF5C7D6820BE979100B96666 /* RTwitterManager.h in Headers */,
+				CFE6078E20DB4EDC007A60C2 /* RQqManager.h in Headers */,
+				CFD133DA20E37C39004CED6C /* RShareManager.h in Headers */,
+				CFD733EB20BF8CEF006483E2 /* RTwitterAuthHelper.h in Headers */,
+				CF3F68CC20C781E700AA0DCE /* RSinaWeiboManager.h in Headers */,
+				CFBBBCCA20C12A7E00F5FDA5 /* RInstagramManager.h in Headers */,
+				CF5C7D4A20BE3FE800B96666 /* RPlatform.h in Headers */,
+				CF5C7D5620BE469200B96666 /* RFacebookHelper.h in Headers */,
+				CF5C7D4E20BE415100B96666 /* RRegister.h in Headers */,
+				CFD26E8A20C6811300F0EFF9 /* RWechatHelper.h in Headers */,
+				CF1A1C6420E1D90000128E31 /* RTumblrManager.h in Headers */,
+				CF5C7D2B20BE326900B96666 /* sharekit.h in Headers */,
+				CFD26E6820C677B800F0EFF9 /* RWechatManager.h in Headers */,
+				CF5C7D3620BE341F00B96666 /* RFacebookManager.h in Headers */,
+				CF50351B20DCC8DE007497FF /* RGooglePlusManager.h in Headers */,
+				CF5C7D4520BE3F2500B96666 /* RShare.h in Headers */,
+				CF50352020DCC9C3007497FF /* RQqHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CF04A14320A29836008AFCC8 /* share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF04A17020A29837008AFCC8 /* Build configuration list for PBXNativeTarget "share" */;
+			buildPhases = (
+				D303F96D4F2405B984FC12A8 /* [CP] Check Pods Manifest.lock */,
+				CF04A14020A29836008AFCC8 /* Sources */,
+				CF04A14120A29836008AFCC8 /* Frameworks */,
+				CF04A14220A29836008AFCC8 /* Resources */,
+				CF5C7D3320BE326900B96666 /* Embed Frameworks */,
+				A075E04BA9E46163DFC11EA6 /* [CP] Copy Pods Resources */,
+				EA103F991B6FBAF0EF90B272 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF5C7D2D20BE326900B96666 /* PBXTargetDependency */,
+			);
+			name = share;
+			productName = share;
+			productReference = CF04A14420A29836008AFCC8 /* share.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF04A15B20A29837008AFCC8 /* shareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF04A17320A29837008AFCC8 /* Build configuration list for PBXNativeTarget "shareTests" */;
+			buildPhases = (
+				CF04A15820A29837008AFCC8 /* Sources */,
+				CF04A15920A29837008AFCC8 /* Frameworks */,
+				CF04A15A20A29837008AFCC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF04A15E20A29837008AFCC8 /* PBXTargetDependency */,
+			);
+			name = shareTests;
+			productName = shareTests;
+			productReference = CF04A15C20A29837008AFCC8 /* shareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF04A16620A29837008AFCC8 /* shareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF04A17620A29837008AFCC8 /* Build configuration list for PBXNativeTarget "shareUITests" */;
+			buildPhases = (
+				CF04A16320A29837008AFCC8 /* Sources */,
+				CF04A16420A29837008AFCC8 /* Frameworks */,
+				CF04A16520A29837008AFCC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF04A16920A29837008AFCC8 /* PBXTargetDependency */,
+			);
+			name = shareUITests;
+			productName = shareUITests;
+			productReference = CF04A16720A29837008AFCC8 /* shareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CF5C7D2620BE326900B96666 /* sharekit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF5C7D3020BE326900B96666 /* Build configuration list for PBXNativeTarget "sharekit" */;
+			buildPhases = (
+				F11010A0BA6B01B9B5E4E677 /* [CP] Check Pods Manifest.lock */,
+				CF5C7D2220BE326900B96666 /* Sources */,
+				CF5C7D2320BE326900B96666 /* Frameworks */,
+				CF5C7D2420BE326900B96666 /* Headers */,
+				CF5C7D2520BE326900B96666 /* Resources */,
+				243BEA1D6E1062694E071C8F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sharekit;
+			productName = sharekit;
+			productReference = CF5C7D2720BE326900B96666 /* sharekit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF04A13C20A29836008AFCC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = rex;
+				TargetAttributes = {
+					CF04A14320A29836008AFCC8 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					CF04A15B20A29837008AFCC8 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = CF04A14320A29836008AFCC8;
+					};
+					CF04A16620A29837008AFCC8 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = CF04A14320A29836008AFCC8;
+					};
+					CF5C7D2620BE326900B96666 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = CF04A13F20A29836008AFCC8 /* Build configuration list for PBXProject "share" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF04A13B20A29836008AFCC8;
+			productRefGroup = CF04A14520A29836008AFCC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF04A14320A29836008AFCC8 /* share */,
+				CF04A15B20A29837008AFCC8 /* shareTests */,
+				CF04A16620A29837008AFCC8 /* shareUITests */,
+				CF5C7D2620BE326900B96666 /* sharekit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF04A14220A29836008AFCC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF04A15420A29837008AFCC8 /* LaunchScreen.storyboard in Resources */,
+				CFF3303320F6EE8A0018D6F3 /* Liberation.pdf in Resources */,
+				CF04A15120A29837008AFCC8 /* Assets.xcassets in Resources */,
+				CF04A14F20A29836008AFCC8 /* Main.storyboard in Resources */,
+				CFC285F020F8A56000DE7CDF /* WeiboSDK.bundle in Resources */,
+				CFF3303420F6EE8A0018D6F3 /* ca.mp4 in Resources */,
+				CFF3303520F6EE8A0018D6F3 /* list.docx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A15A20A29837008AFCC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A16520A29837008AFCC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5C7D2520BE326900B96666 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		243BEA1D6E1062694E071C8F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-sharekit/Pods-sharekit-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sharekit/Pods-sharekit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A075E04BA9E46163DFC11EA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-share/Pods-share-resources.sh",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share/Pods-share-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D303F96D4F2405B984FC12A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-share-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA103F991B6FBAF0EF90B272 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-share/Pods-share-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK/Flurry_iOS_SDK.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flurry_iOS_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share/Pods-share-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F11010A0BA6B01B9B5E4E677 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sharekit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF04A14020A29836008AFCC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF50352320DCCECA007497FF /* ViewController.m in Sources */,
+				CF04A15720A29837008AFCC8 /* main.m in Sources */,
+				CF04A14920A29836008AFCC8 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A15820A29837008AFCC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF04A16120A29837008AFCC8 /* shareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF04A16320A29837008AFCC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF04A16C20A29837008AFCC8 /* shareUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF5C7D2220BE326900B96666 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF50352120DCC9C3007497FF /* RQqHelper.m in Sources */,
+				CF5C7D5720BE469200B96666 /* RFacebookHelper.m in Sources */,
+				CFBBBCCB20C12A7E00F5FDA5 /* RInstagramManager.m in Sources */,
+				CFE6078F20DB4EDC007A60C2 /* RQqManager.m in Sources */,
+				CFD26E8B20C6811300F0EFF9 /* RWechatHelper.m in Sources */,
+				CF50351D20DCC8DE007497FF /* RGooglePlusManager.m in Sources */,
+				CF5C7D4620BE3F2500B96666 /* RShare.m in Sources */,
+				CFD133DB20E37C39004CED6C /* RShareManager.m in Sources */,
+				CFD733EC20BF8CEF006483E2 /* RTwitterAuthHelper.m in Sources */,
+				CF5C7D4F20BE415100B96666 /* RRegister.m in Sources */,
+				CF5C7D4B20BE3FE800B96666 /* RPlatform.m in Sources */,
+				CFD26E6920C677B800F0EFF9 /* RWechatManager.m in Sources */,
+				CF5C7D6920BE979100B96666 /* RTwitterManager.m in Sources */,
+				CF3F68CD20C781E700AA0DCE /* RSinaWeiboManager.m in Sources */,
+				CF5C7D3720BE341F00B96666 /* RFacebookManager.m in Sources */,
+				CF1A1C6520E1D90000128E31 /* RTumblrManager.m in Sources */,
+				CF21E23520E0DD4F00B6BA74 /* RWhatsAppManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF04A15E20A29837008AFCC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF04A14320A29836008AFCC8 /* share */;
+			targetProxy = CF04A15D20A29837008AFCC8 /* PBXContainerItemProxy */;
+		};
+		CF04A16920A29837008AFCC8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF04A14320A29836008AFCC8 /* share */;
+			targetProxy = CF04A16820A29837008AFCC8 /* PBXContainerItemProxy */;
+		};
+		CF5C7D2D20BE326900B96666 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF5C7D2620BE326900B96666 /* sharekit */;
+			targetProxy = CF5C7D2C20BE326900B96666 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF04A14D20A29836008AFCC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF04A14E20A29836008AFCC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF04A15220A29837008AFCC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF04A15320A29837008AFCC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF04A16E20A29837008AFCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		CF04A16F20A29837008AFCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+		CF04A17120A29837008AFCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0D5ACFC5E152BCD005D0BE1 /* Pods-share.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.33.0",
+					"$(PROJECT_DIR)/Twitter-Kit-iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/thirdSdk",
+					"$(PROJECT_DIR)/thirdSdk/FacebookSDKs-iOS-4.33.0",
+				);
+				INFOPLIST_FILE = share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/Flurry",
+					"$(PROJECT_DIR)/thirdSdk/WechatSDK1.8.2",
+					"$(PROJECT_DIR)/thirdSdk/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF04A17220A29837008AFCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BDEDB4EC074DE6A771B00D5 /* Pods-share.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.33.0",
+					"$(PROJECT_DIR)/Twitter-Kit-iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/thirdSdk",
+					"$(PROJECT_DIR)/thirdSdk/FacebookSDKs-iOS-4.33.0",
+				);
+				INFOPLIST_FILE = share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/Flurry",
+					"$(PROJECT_DIR)/thirdSdk/WechatSDK1.8.2",
+					"$(PROJECT_DIR)/thirdSdk/libWeiboSDK",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF04A17420A29837008AFCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				INFOPLIST_FILE = shareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.shareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/share.app/share";
+			};
+			name = Debug;
+		};
+		CF04A17520A29837008AFCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				INFOPLIST_FILE = shareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.shareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/share.app/share";
+			};
+			name = Release;
+		};
+		CF04A17720A29837008AFCC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				INFOPLIST_FILE = shareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.shareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = share;
+			};
+			name = Debug;
+		};
+		CF04A17820A29837008AFCC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				INFOPLIST_FILE = shareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.shareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = share;
+			};
+			name = Release;
+		};
+		CF5C7D3120BE326900B96666 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B0A1F34C1DFEAD156D86795 /* Pods-sharekit.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.33.0",
+					"$(PROJECT_DIR)/Twitter-Kit-iOS",
+					"$(PROJECT_DIR)/Pods/TwitterKit/iOS",
+					"$(PROJECT_DIR)/Pods/TwitterCore/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/thirdSdk",
+					"$(PROJECT_DIR)/thirdSdk/FacebookSDKs-iOS-4.33.0",
+				);
+				INFOPLIST_FILE = sharekit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WechatSDK1.8.2",
+					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/Flurry",
+					"$(PROJECT_DIR)/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/thirdSdk/WechatSDK1.8.2",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.sharekit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF5C7D3220BE326900B96666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 043518390208CD879D792B26 /* Pods-sharekit.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ETBLXR7UGM;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.33.0",
+					"$(PROJECT_DIR)/Twitter-Kit-iOS",
+					"$(PROJECT_DIR)/Pods/TwitterKit/iOS",
+					"$(PROJECT_DIR)/Pods/TwitterCore/iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/thirdSdk",
+					"$(PROJECT_DIR)/thirdSdk/FacebookSDKs-iOS-4.33.0",
+				);
+				INFOPLIST_FILE = sharekit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WechatSDK1.8.2",
+					"$(PROJECT_DIR)/libWeiboSDK",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/Flurry",
+					"$(PROJECT_DIR)/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/Pods/Flurry-iOS-SDK/FlurryAds",
+					"$(PROJECT_DIR)/thirdSdk/WechatSDK1.8.2",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = rex.me.sharekit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF04A13F20A29836008AFCC8 /* Build configuration list for PBXProject "share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF04A16E20A29837008AFCC8 /* Debug */,
+				CF04A16F20A29837008AFCC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF04A17020A29837008AFCC8 /* Build configuration list for PBXNativeTarget "share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF04A17120A29837008AFCC8 /* Debug */,
+				CF04A17220A29837008AFCC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF04A17320A29837008AFCC8 /* Build configuration list for PBXNativeTarget "shareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF04A17420A29837008AFCC8 /* Debug */,
+				CF04A17520A29837008AFCC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF04A17620A29837008AFCC8 /* Build configuration list for PBXNativeTarget "shareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF04A17720A29837008AFCC8 /* Debug */,
+				CF04A17820A29837008AFCC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF5C7D3020BE326900B96666 /* Build configuration list for PBXNativeTarget "sharekit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5C7D3120BE326900B96666 /* Debug */,
+				CF5C7D3220BE326900B96666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF04A13C20A29836008AFCC8 /* Project object */;
+}
