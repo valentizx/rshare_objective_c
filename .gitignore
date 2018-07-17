@@ -2,8 +2,10 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-#忽略 Framework 文件
+#忽略 Framework 和 a 文件
 *.framework
+*.a
+
 
 ## Build generated
 build/
