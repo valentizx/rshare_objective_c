@@ -148,7 +148,7 @@ static RWechatManager* _instance = nil;
 }
 
 - (void)shareFileWithData:(NSData *)fileData
-                extention:(NSString *)extensionName
+                extension:(NSString *)extensionName
                     title:(NSString *)title
                thumbImage:(UIImage *)image
                     scene:(RWXTargetScene)scene

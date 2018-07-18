@@ -105,7 +105,7 @@
 }
 
 /**
- * 构建网页消息请求体.
+ * 构建视频消息请求体.
  */
 - (SendMessageToWXReq *)getVideoMessageReqWithURL:(NSString *)videoURL
                                             title:(NSString *)title

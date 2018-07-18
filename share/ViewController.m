@@ -50,7 +50,7 @@ static NSString* _videoWebpageURL = @"https://www.youtube.com/watch?v=DSRSgMp5X1
 // 音频流链接
 static NSString* _audioStreamURL = @"http://10.136.9.109/fcgi-bin/fcg_music_get_playurl.fcg?song_id=1234&redirect=0&filetype=mp3&qqmusic_fromtag=15&app_id=100311325&app_key=b233c8c2c8a0fbee4f83781b4a04c595&device_id=1234";
 // 音频网页链接
-static NSString* _adudioWebpageURL = @"http://url.cn/5tZF9KT";
+static NSString* _audioWebpageURL = @"http://url.cn/5tZF9KT";
 // 网络图片链接
 static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125.jpg";
 
@@ -61,20 +61,8 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     _videoURLLabel.text = @"1, 若分享本地视频, 请先点击「获取视频URL」按钮; \n2, 在分享本地视频的过程中, 注意 demo 中 localVideoURL 和 localVideoURL2 的区别⚠️.";
     
     _image = [UIImage imageNamed:@"c_1"];
-    _localVideoURL = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"apm" ofType:@"mov"]];
-    
-    NSData* imageData = UIImageJPEGRepresentation(_image, 1);
-    [imageData writeToFile:[self getLocaleImgPath] atomically:true];
+   
 }
-
-- (NSString*)getLocaleImgPath {
-    NSFileManager* manager = [NSFileManager defaultManager];
-    NSString* path = [NSString stringWithFormat:@"%@%@",[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject], @"/share"];
-    
-    [manager createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:nil];
-    return [path stringByAppendingPathComponent:@"tmpimage.jpg"];
-}
-
 
 #pragma mark - Facebook -
 - (IBAction)shareFbWeb:(id)sender {
@@ -227,7 +215,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     RWechatManager* manager = [RWechatManager shared];
     [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
     
-    [manager shareMusicWithStreamURL:_audioStreamURL webpageURL:_adudioWebpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareMusicWithStreamURL:_audioStreamURL webpageURL:_audioWebpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -266,7 +254,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     NSData* pdfData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Liberation" ofType:@"pdf"]];
     NSString* pdfExt = @"pdf";
     
-    [manager shareFileWithData:docData extention:docExt title:_title thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareFileWithData:docData extension:docExt title:_title thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -324,7 +312,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     
     NSLog(@"⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️%@", _localVideoURL);
     
-    [manager shareVideoWithLocalURL:_localVideoURL2 videoAsset:_asset text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareVideoWithLocalURL:_localVideoURL2 text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -524,35 +512,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    
-     __block NSURL* videoURL = [[NSURL alloc]init];
-    
-    if (@available(iOS 11, *)) {
-       
-        _asset = [info objectForKey:UIImagePickerControllerPHAsset];
-        
-        
-        PHImageManager *manager = [PHImageManager defaultManager];
-        PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
-        options.version = PHImageRequestOptionsVersionCurrent;
-        options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
-        
-        
-       
-    
-        [manager requestAVAssetForVideo:_asset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
-            AVURLAsset *urlAsset = (AVURLAsset *)asset;
-            
-            NSURL *url = urlAsset.URL;
-            
-            videoURL = url;
-            
-        }];
 
-    } else {
-        _localVideoURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-    }
-    
     [picker dismissViewControllerAnimated:true completion:^{
     
         self-> _localVideoURL2 = [info objectForKey:UIImagePickerControllerMediaURL];

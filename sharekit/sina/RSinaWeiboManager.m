@@ -94,7 +94,6 @@ static RSinaWeiboManager* _instance = nil;
 }
 
 - (void)shareVideoWithLocalURL:(NSURL *)localVideoURL
-                     videoAsset:(PHAsset*)asset
                            text:(NSString *)text
                         toStory:(BOOL)isToStory
                       completion:(share)share {
@@ -109,7 +108,6 @@ static RSinaWeiboManager* _instance = nil;
     obj.isShareToStory = isToStory;
     obj.delegate = self;
     [obj addVideo:localVideoURL];
-    //[obj addVideoAsset:asset];
     self.message.videoObject = obj;
     self.message.text = text;
     // 由于 addVideo 函数是异步操作, 所以必须在 wbsdk_TransferDidReceiveObject 回调中发送分享请求!⚠️

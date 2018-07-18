@@ -60,7 +60,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param share 分享回调.
  */
 - (void)shareVideoWithLocalURL:(NSURL*)localVideoURL
-                     videoAsset:(PHAsset*)asset
                            text:(nullable NSString*)text
                         toStory:(BOOL)isToStory
                       completion:(nullable share)share;
