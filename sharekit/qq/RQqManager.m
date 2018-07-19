@@ -135,8 +135,6 @@ static RQqManager* _instance = nil;
 
     _share = share;
     
-    NSString* utf8URL = [audioStreamURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
     NSData* thumbImageData = UIImageJPEGRepresentation(thumbImage, 1.0f);
     _resultCode = [QQApiInterface sendReq:[[self getQHelper]getAudioReqToQQWithAudioStreamURL:audioStreamURL title:title description:description thumbImageData:thumbImageData webpageURL:webpageURL scene:scene]];
     [self handleResultCode:_resultCode];
@@ -182,7 +180,7 @@ static RQqManager* _instance = nil;
     }
     _share = share;
     
-    _resultCode = [QQApiInterface sendReq:[[self getQHelper] getLocaleVideoReqToQZone:videoAssetURL description:description]];
+    _resultCode = [QQApiInterface sendReq:[[self getQHelper] getLocalVideoReqToQZone:videoAssetURL description:description]];
     [self handleResultCode:_resultCode];
     
 }
@@ -257,20 +255,21 @@ static RQqManager* _instance = nil;
 }
 - (void)onResp:(QQBaseResp *)resp {
     
+    
+    if (!_share) { return; }
+    
     if ([resp.class isSubclassOfClass:[SendMessageToQQResp class]]) {
         
         if ([resp.result isEqualToString:@"0"]) {
-            if (_share) {
-                _share(RShareSDKQQ, RShareResultSuccess ,nil);
-            }
+            
+             _share(RShareSDKQQ, RShareResultSuccess ,nil);
+            
         } else if ([resp.result isEqualToString:@"-4"]) {
-            if (_share) {
-                _share(RShareSDKQQ, RShareResultCancel ,nil);
-            }
+            
+            _share(RShareSDKQQ, RShareResultCancel ,nil);
+            
         } else {
-            if (_share) {
-                _share(RShareSDKQQ, RShareResultFailure, resp.errorDescription);
-            }
+            _share(RShareSDKQQ, RShareResultFailure, resp.errorDescription);
         }
        
     }

@@ -89,14 +89,8 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareFbPhotos:(id)sender {
     RFacebookManager* manager = [RFacebookManager shared];
     [manager sdkInitializeByID:@"234270717151331" secret:nil];
-    UIImage* image1 = [UIImage imageNamed:@"affleck"];
-    UIImage* image2 = [UIImage imageNamed:@"affleck"];
-    UIImage* image3 = [UIImage imageNamed:@"affleck"];
-    UIImage* image4 = [UIImage imageNamed:@"affleck"];
-    UIImage* image5 = [UIImage imageNamed:@"affleck"];
-    UIImage* image6 = [UIImage imageNamed:@"affleck"];
-    UIImage* image7 = [UIImage imageNamed:@"affleck"];
-    [manager sharePhotos:@[image1, image2, image3, image4, image5, image6]
+    UIImage* image = [UIImage imageNamed:@"c"];
+    [manager sharePhotos:@[image, image, image, image, image, image]
                     from:self
               completion:^(RShareSDKPlatform platform, ShareResult result, NSString *errorInfo) {
         if (result == RShareResultSuccess) {
@@ -423,18 +417,11 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     }];
 }
 - (IBAction)shareImgsQz:(id)sender {
-    UIImage* image1 = [UIImage imageNamed:@"cover1"];
-    UIImage* image2 = [UIImage imageNamed:@"cover2"];
-    UIImage* image3 = [UIImage imageNamed:@"cover3"];
-    UIImage* image4 = [UIImage imageNamed:@"cover4"];
-    UIImage* image5 = [UIImage imageNamed:@"cover5"];
-    UIImage* image6 = [UIImage imageNamed:@"cover6"];
-    UIImage* image7 = [UIImage imageNamed:@"cover7"];
-    UIImage* image8 = [UIImage imageNamed:@"cover8"];
-    UIImage* image9 = [UIImage imageNamed:@"cover9"];
+    UIImage* image = [UIImage imageNamed:@"c"];
+   
     RQqManager* manager = [RQqManager shared];
     [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
-    [manager shareImagesToQZone:@[image1, image2, image3, image4, image5, image6, image7, image8, image9]  description:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareImagesToQZone:@[image , image, image, image, image, image, image]  description:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){

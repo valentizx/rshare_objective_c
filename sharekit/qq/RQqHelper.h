@@ -56,6 +56,6 @@
 - (SendMessageToQQReq*)getImagesReqToQZone:(NSArray<UIImage*>*)images description:(NSString*)description;
 
 // 本地视频
-- (SendMessageToQQReq*)getLocaleVideoReqToQZone:(NSURL*)videoAssetURL description:(NSString*)description;
+- (SendMessageToQQReq*)getLocalVideoReqToQZone:(NSURL*)videoAssetURL description:(NSString*)description;
 
 @end

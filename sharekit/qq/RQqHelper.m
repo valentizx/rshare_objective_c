@@ -90,7 +90,7 @@
     
 }
 
-- (SendMessageToQQReq *)getLocaleVideoReqToQZone:(NSURL *)videoAssetURL description:(NSString *)description {
+- (SendMessageToQQReq *)getLocalVideoReqToQZone:(NSURL *)videoAssetURL description:(NSString *)description {
     QQApiVideoForQZoneObject *obj = [QQApiVideoForQZoneObject objectWithAssetURL:[videoAssetURL absoluteString] title:description extMap:nil];
     SendMessageToQQReq *req = [SendMessageToQQReq reqWithContent:obj];
     return req;
