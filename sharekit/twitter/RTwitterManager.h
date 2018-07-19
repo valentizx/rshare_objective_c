@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 /**
+ ⚠️ Swift 版本一定要引入 MapKit 和 MobileCoreService 两个框架
  
  初始化 Twitter SDK https://apps.twitter.com/
  ⚠️ Twitter SDK 将于 2018/10/31 不再更新和提供任何支持, 但是现有的 SDK 不会作废, 需自行维护以及开发 https://blog.twitter.com/developer/en_us/topics/tools/2018/discontinuing-support-for-twitter-kit-sdk.html

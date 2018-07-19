@@ -47,8 +47,5 @@ static RTwitterAuthHelper* _instance = nil;
     return [[Twitter sharedInstance]application:application openURL:url options:options];
 }
 
-#pragma mark - 分享逻辑 -
-
-
 
 @end

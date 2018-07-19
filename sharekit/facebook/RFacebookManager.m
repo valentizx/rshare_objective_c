@@ -80,7 +80,7 @@ static RFacebookManager* _instance = nil;
         NSLog(@"Facebook 未安装");
         return;
     }
-    NSAssert([photos count] <= 6, @"图片数组不能超过6");
+    NSAssert([photos count] <= 6, @"图片个数不能超过 6");
     FBSDKSharePhotoContent* content = [RFacebookHelper getPhotosContent:photos];
     FBSDKShareDialog* dialog = [FBSDKShareDialog showFromViewController:from withContent:content delegate:self];
     if ([dialog canShow]) {

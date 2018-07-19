@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  分享照片.
 
+ @note 偶尔有个别图片无法加载的情况, 如数组中 5 张图片, 跳转 Facebook 客户端后只成功加载了 4 张.
+ 
  @param photos UIImage 的照片数组, 照片必须小于 12MB, 并且用户需要安装版本 7.0 或以上的原生 iOS 版 Facebook 应用.
  @param from 当前控制器.
  @param share 分享状态回调 (无效: 跳转 Facebook 原生应用的分享回调都无效).
