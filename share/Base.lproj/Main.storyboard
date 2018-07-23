@@ -260,7 +260,7 @@
                                 <rect key="frame" x="193" y="400" width="47" height="30"/>
                                 <state key="normal" title="LINE文"/>
                                 <connections>
-                                    <action selector="shareTextLi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZe-6y-Zqb"/>
+                                    <action selector="shareTextLi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjR-eL-fVH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJf-el-QSC">
@@ -329,7 +329,7 @@
                             <constraint firstItem="q1z-Km-Gua" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cX3-BS-xVv"/>
                             <constraint firstItem="dDD-wc-dC8" firstAttribute="top" secondItem="g8P-um-BLC" secondAttribute="bottom" constant="8" id="dT2-PP-FxZ"/>
                             <constraint firstItem="a6v-vD-zQv" firstAttribute="top" secondItem="9hf-Qh-ydU" secondAttribute="top" id="dV0-W6-6IL"/>
-                            <constraint firstItem="cEp-jq-BBe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rfm-fj-CQp" secondAttribute="trailing" symbolic="YES" id="ecB-9a-zpq"/>
+                            <constraint firstItem="cEp-jq-BBe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rfm-fj-CQp" secondAttribute="trailing" constant="8" symbolic="YES" id="ecB-9a-zpq"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q1z-Km-Gua" secondAttribute="trailingMargin" id="f5l-zH-KTP"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jZx-GZ-hVb" secondAttribute="trailing" constant="20" symbolic="YES" id="fAd-cm-2z9"/>
                             <constraint firstAttribute="trailing" secondItem="2sr-wV-f9c" secondAttribute="trailing" constant="109" id="gIl-FZ-HfU"/>

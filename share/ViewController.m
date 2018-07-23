@@ -17,6 +17,7 @@
 #import "RWhatsAppManager.h"
 #import "RGooglePlusManager.h"
 #import "RTumblrManager.h"
+#import "RLineManager.h"
 
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -475,11 +476,16 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
         }
     }];
 }
+
+
+
 #pragma mark - Line -
 - (IBAction)shareTextLi:(id)sender {
+    [RLineManager.shared shareText:_description];
 }
 
 - (IBAction)shareImgLi:(id)sender {
+    [RLineManager.shared shareImage:_image];
 }
 
 - (IBAction)getVideoURL:(id)sender {

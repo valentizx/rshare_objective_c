@@ -33,6 +33,9 @@
         appString = @"twitter://";
     } else if (platform == RShareSDKFacebook) {
         appString = @"fbapi://";
+    } else if (platform == RShareSDKLine) {
+        appString = @"line://";
+        
     } else {
         return false;
     }

@@ -65,6 +65,8 @@
 		CFD26E8B20C6811300F0EFF9 /* RWechatHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD26E8920C6811300F0EFF9 /* RWechatHelper.m */; };
 		CFD733EB20BF8CEF006483E2 /* RTwitterAuthHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD733E920BF8CEF006483E2 /* RTwitterAuthHelper.h */; };
 		CFD733EC20BF8CEF006483E2 /* RTwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD733EA20BF8CEF006483E2 /* RTwitterAuthHelper.m */; };
+		CFDC64BC210583D0002B87BA /* RLineManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDC64BA210583D0002B87BA /* RLineManager.h */; };
+		CFDC64BD210583D0002B87BA /* RLineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDC64BB210583D0002B87BA /* RLineManager.m */; };
 		CFE6078E20DB4EDC007A60C2 /* RQqManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFE6078C20DB4EDC007A60C2 /* RQqManager.h */; };
 		CFE6078F20DB4EDC007A60C2 /* RQqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE6078D20DB4EDC007A60C2 /* RQqManager.m */; };
 		CFF3303320F6EE8A0018D6F3 /* Liberation.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CFF3303020F6EE890018D6F3 /* Liberation.pdf */; };
@@ -188,6 +190,8 @@
 		CFD26E8920C6811300F0EFF9 /* RWechatHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWechatHelper.m; sourceTree = "<group>"; };
 		CFD733E920BF8CEF006483E2 /* RTwitterAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTwitterAuthHelper.h; sourceTree = "<group>"; };
 		CFD733EA20BF8CEF006483E2 /* RTwitterAuthHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTwitterAuthHelper.m; sourceTree = "<group>"; };
+		CFDC64BA210583D0002B87BA /* RLineManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLineManager.h; sourceTree = "<group>"; };
+		CFDC64BB210583D0002B87BA /* RLineManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLineManager.m; sourceTree = "<group>"; };
 		CFE6078C20DB4EDC007A60C2 /* RQqManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RQqManager.h; sourceTree = "<group>"; };
 		CFE6078D20DB4EDC007A60C2 /* RQqManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RQqManager.m; sourceTree = "<group>"; };
 		CFF3303020F6EE890018D6F3 /* Liberation.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Liberation.pdf; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 		CF5C7D2820BE326900B96666 /* sharekit */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC64B9210583B0002B87BA /* line */,
 				CF1A1C6120E1D8BD00128E31 /* tumblr */,
 				CF21E23120E0DD2A00B6BA74 /* whatsapp */,
 				CF50351820DCC8BD007497FF /* googleplus */,
@@ -465,6 +470,15 @@
 			path = wechat;
 			sourceTree = "<group>";
 		};
+		CFDC64B9210583B0002B87BA /* line */ = {
+			isa = PBXGroup;
+			children = (
+				CFDC64BA210583D0002B87BA /* RLineManager.h */,
+				CFDC64BB210583D0002B87BA /* RLineManager.m */,
+			);
+			path = line;
+			sourceTree = "<group>";
+		};
 		CFE6078B20DB4EC3007A60C2 /* qq */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +513,7 @@
 				CFD133DA20E37C39004CED6C /* RShareManager.h in Headers */,
 				CFD733EB20BF8CEF006483E2 /* RTwitterAuthHelper.h in Headers */,
 				CF3F68CC20C781E700AA0DCE /* RSinaWeiboManager.h in Headers */,
+				CFDC64BC210583D0002B87BA /* RLineManager.h in Headers */,
 				CFBBBCCA20C12A7E00F5FDA5 /* RInstagramManager.h in Headers */,
 				CF5C7D4A20BE3FE800B96666 /* RPlatform.h in Headers */,
 				CF5C7D5620BE469200B96666 /* RFacebookHelper.h in Headers */,
@@ -831,6 +846,7 @@
 				CFD26E6920C677B800F0EFF9 /* RWechatManager.m in Sources */,
 				CF5C7D6920BE979100B96666 /* RTwitterManager.m in Sources */,
 				CF3F68CD20C781E700AA0DCE /* RSinaWeiboManager.m in Sources */,
+				CFDC64BD210583D0002B87BA /* RLineManager.m in Sources */,
 				CF5C7D3720BE341F00B96666 /* RFacebookManager.m in Sources */,
 				CF1A1C6520E1D90000128E31 /* RTumblrManager.m in Sources */,
 				CF21E23520E0DD4F00B6BA74 /* RWhatsAppManager.m in Sources */,
