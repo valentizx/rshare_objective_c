@@ -78,13 +78,6 @@
                                     <action selector="shareVideoWx:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TcH-6c-cq3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7H-TB-dX9">
-                                <rect key="frame" x="142" y="134" width="86" height="30"/>
-                                <state key="normal" title="INS系统分享"/>
-                                <connections>
-                                    <action selector="shareInsPhSys:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRt-QH-5ey"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fT2-Ol-NsA">
                                 <rect key="frame" x="16" y="210" width="55" height="30"/>
                                 <state key="normal" title="WX音乐"/>
@@ -248,8 +241,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pki-1I-GQ8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pki-1I-GQ8">
                                 <rect key="frame" x="236" y="134" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="INS视频"/>
                                 <connections>
                                     <action selector="shareInsVid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="auZ-kq-i49"/>
@@ -260,6 +254,20 @@
                                 <state key="normal" title="WX文件"/>
                                 <connections>
                                     <action selector="shareFileWx:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uLG-S8-Q8M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoJ-Z1-FVA">
+                                <rect key="frame" x="193" y="400" width="47" height="30"/>
+                                <state key="normal" title="LINE文"/>
+                                <connections>
+                                    <action selector="shareTextLi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wZe-6y-Zqb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJf-el-QSC">
+                                <rect key="frame" x="248" y="400" width="47" height="30"/>
+                                <state key="normal" title="LINE图"/>
+                                <connections>
+                                    <action selector="shareImgLi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XPr-Ch-69A"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -292,7 +300,6 @@
                             <constraint firstItem="jZx-GZ-hVb" firstAttribute="leading" secondItem="TNZ-Fx-f7I" secondAttribute="trailing" constant="11" id="Gtz-12-Px0"/>
                             <constraint firstItem="jZx-GZ-hVb" firstAttribute="top" secondItem="TNZ-Fx-f7I" secondAttribute="top" id="GzU-dS-oDz"/>
                             <constraint firstItem="45Q-08-HUF" firstAttribute="leading" secondItem="fT2-Ol-NsA" secondAttribute="trailing" constant="10" id="H2l-ly-Exi"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="l7H-TB-dX9" secondAttribute="trailing" constant="20" symbolic="YES" id="HpG-lc-pnQ"/>
                             <constraint firstItem="phc-xm-WGl" firstAttribute="top" secondItem="fhS-aR-YvQ" secondAttribute="bottom" constant="8" id="ICS-H6-xBz"/>
                             <constraint firstItem="HZs-Uq-O0O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IKi-ZP-6Co"/>
                             <constraint firstItem="6hy-q4-1zs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IQy-1T-nBU"/>
@@ -319,7 +326,6 @@
                             <constraint firstItem="ST8-gl-WiD" firstAttribute="leading" secondItem="q1z-Km-Gua" secondAttribute="trailing" constant="10" id="ZJQ-4N-Lfb"/>
                             <constraint firstItem="dDD-wc-dC8" firstAttribute="leading" secondItem="Jmk-5Z-6PF" secondAttribute="trailing" constant="11" id="ZuJ-nh-oFQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MCy-D3-AHg" secondAttribute="trailing" constant="20" symbolic="YES" id="a48-Je-HXu"/>
-                            <constraint firstItem="l7H-TB-dX9" firstAttribute="leading" secondItem="6hy-q4-1zs" secondAttribute="trailing" constant="10" id="cN0-5l-krb"/>
                             <constraint firstItem="q1z-Km-Gua" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cX3-BS-xVv"/>
                             <constraint firstItem="dDD-wc-dC8" firstAttribute="top" secondItem="g8P-um-BLC" secondAttribute="bottom" constant="8" id="dT2-PP-FxZ"/>
                             <constraint firstItem="a6v-vD-zQv" firstAttribute="top" secondItem="9hf-Qh-ydU" secondAttribute="top" id="dV0-W6-6IL"/>
@@ -334,23 +340,24 @@
                             <constraint firstItem="M9Z-fn-6tF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jZx-GZ-hVb" secondAttribute="trailing" constant="8" symbolic="YES" id="hhi-r5-FdT"/>
                             <constraint firstItem="x8x-MZ-P8V" firstAttribute="top" secondItem="wFF-9E-ba9" secondAttribute="bottom" constant="8" id="iwv-hv-d21"/>
                             <constraint firstItem="45Q-08-HUF" firstAttribute="top" secondItem="fT2-Ol-NsA" secondAttribute="top" id="jJ5-EC-eUj"/>
+                            <constraint firstItem="aoJ-Z1-FVA" firstAttribute="top" secondItem="dDD-wc-dC8" secondAttribute="top" id="jZG-sv-vwv"/>
                             <constraint firstItem="MbJ-bd-d1O" firstAttribute="leading" secondItem="jQh-bk-nbN" secondAttribute="trailing" constant="10" id="kdj-GY-BdD"/>
                             <constraint firstItem="g8P-um-BLC" firstAttribute="top" secondItem="TNZ-Fx-f7I" secondAttribute="bottom" constant="8" id="kmZ-DO-0EH"/>
                             <constraint firstItem="TNZ-Fx-f7I" firstAttribute="leading" secondItem="x8x-MZ-P8V" secondAttribute="leading" id="lzO-Z6-LNh"/>
-                            <constraint firstItem="l7H-TB-dX9" firstAttribute="top" secondItem="6hy-q4-1zs" secondAttribute="top" id="m4u-ll-MFj"/>
                             <constraint firstItem="fT2-Ol-NsA" firstAttribute="top" secondItem="jQh-bk-nbN" secondAttribute="bottom" constant="8" id="mY5-w6-Nfh"/>
                             <constraint firstAttribute="trailing" secondItem="u29-2Z-VR5" secondAttribute="trailing" constant="109" id="mso-Eh-PLm"/>
+                            <constraint firstItem="aoJ-Z1-FVA" firstAttribute="leading" secondItem="dDD-wc-dC8" secondAttribute="trailing" constant="8" id="pIb-6j-nh1"/>
                             <constraint firstItem="9hf-Qh-ydU" firstAttribute="top" secondItem="ST8-gl-WiD" secondAttribute="top" id="pwS-XU-g8D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HZs-Uq-O0O" secondAttribute="trailing" id="qgh-8J-sAa"/>
                             <constraint firstItem="wFF-9E-ba9" firstAttribute="top" secondItem="fT2-Ol-NsA" secondAttribute="bottom" constant="8" id="rHz-lB-zJd"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="x8x-MZ-P8V" secondAttribute="trailing" constant="20" symbolic="YES" id="rUi-Bv-dUF"/>
                             <constraint firstItem="HZs-Uq-O0O" firstAttribute="top" secondItem="BZs-be-yqU" secondAttribute="bottom" constant="8" id="s6B-T7-vLv"/>
+                            <constraint firstItem="QJf-el-QSC" firstAttribute="leading" secondItem="aoJ-Z1-FVA" secondAttribute="trailing" constant="8" id="tLJ-TX-7ol"/>
                             <constraint firstItem="LVT-wi-cCH" firstAttribute="top" secondItem="MbJ-bd-d1O" secondAttribute="top" id="ue4-6x-xvD"/>
+                            <constraint firstItem="QJf-el-QSC" firstAttribute="top" secondItem="aoJ-Z1-FVA" secondAttribute="top" id="v8O-4S-FLl"/>
                             <constraint firstItem="LVT-wi-cCH" firstAttribute="leading" secondItem="MbJ-bd-d1O" secondAttribute="trailing" constant="10" id="vEv-ai-gns"/>
                             <constraint firstItem="AbQ-af-eHt" firstAttribute="leading" secondItem="OhB-JB-Bet" secondAttribute="trailing" constant="11" id="wcV-bX-s62"/>
-                            <constraint firstItem="pki-1I-GQ8" firstAttribute="leading" secondItem="l7H-TB-dX9" secondAttribute="trailing" constant="8" id="ww2-Wq-r2n"/>
                             <constraint firstItem="q1z-Km-Gua" firstAttribute="top" secondItem="qsT-vo-vLl" secondAttribute="bottom" constant="24" id="x29-4y-CQe"/>
-                            <constraint firstItem="pki-1I-GQ8" firstAttribute="top" secondItem="l7H-TB-dX9" secondAttribute="top" id="zab-4t-VGo"/>
                         </constraints>
                     </view>
                     <connections>

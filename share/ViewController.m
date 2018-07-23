@@ -18,6 +18,7 @@
 #import "RGooglePlusManager.h"
 #import "RTumblrManager.h"
 
+
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImage* image;
@@ -137,15 +138,12 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - Instagram -
 - (IBAction)shareInsPh:(id)sender {
     RInstagramManager* manager = [RInstagramManager shared];
-    [manager share:_image mode:ShareModeNative from:self];
+    [manager share:_image ];
 }
-- (IBAction)shareInsPhSys:(id)sender {
-    RInstagramManager* manager = [RInstagramManager shared];
-    [manager share:_image mode:ShareModeSystem from:self];
-}
+
 - (IBAction)shareInsVid:(id)sender {
     RInstagramManager* manager = [RInstagramManager shared];
-    [manager shareVideoWithLocalURL:_localVideoURL2 description:_description from:self];
+    [manager shareVideoWithLocalURL:_localVideoURL2 description:_description];
     
 }
 
@@ -280,16 +278,9 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)sharePhWb:(id)sender {
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
     [manager sdkInitializeByAppKey:@"3026908911" appSecret:@"91fbafc7be7510c0ac5d73883c655db1"];
-    UIImage* image1 = [UIImage imageNamed:@"cover1"];
-    UIImage* image2 = [UIImage imageNamed:@"cover2"];
-    UIImage* image3 = [UIImage imageNamed:@"cover3"];
-    UIImage* image4 = [UIImage imageNamed:@"cover4"];
-    UIImage* image5 = [UIImage imageNamed:@"cover5"];
-    UIImage* image6 = [UIImage imageNamed:@"cover6"];
-    UIImage* image7 = [UIImage imageNamed:@"cover7"];
-    UIImage* image8 = [UIImage imageNamed:@"cover8"];
-    UIImage* image9 = [UIImage imageNamed:@"cover9"];
-    [manager shareImage:@[image1, image2, image3, image4, image5, image6, image7, image8, image9] text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+
+    UIImage* image = [UIImage imageNamed:@"c"];
+    [manager shareImage:@[image, image, image, image, image, image] text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -484,6 +475,13 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
         }
     }];
 }
+#pragma mark - Line -
+- (IBAction)shareTextLi:(id)sender {
+}
+
+- (IBAction)shareImgLi:(id)sender {
+}
+
 - (IBAction)getVideoURL:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;

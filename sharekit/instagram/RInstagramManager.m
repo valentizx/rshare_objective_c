@@ -42,41 +42,22 @@ static NSURL* instagramLibraryURL() {
     return [NSURL URLWithString:str];
 }
 
-- (void)share:(UIImage *)image mode:(Mode)mode from:(UIViewController*)from {
+- (void)share:(UIImage *)image {
     
     if (![RPlatform isInstalled:RShareSDKInstagram]) {
         NSLog(@"Instagram 未安装");
         return;
     }
     
-    if (mode == ShareModeSystem) {
-    
-        _from = from;
-        /**
-         * 调用 UIDocumentInteractionController 分享.
-         **/
-        NSString *savePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"instagram.igo"];
-        [UIImageJPEGRepresentation(image, 1.0) writeToFile:savePath atomically:YES];
-        
-        NSURL *fileURL = [NSURL fileURLWithPath:savePath];
-        self.dc = [UIDocumentInteractionController interactionControllerWithURL:fileURL];
-        self.dc.delegate = self;
-        [self.dc setUTI:@"com.instagram.exclusivegram"];
-        [self.dc presentOpenInMenuFromRect:from.view.bounds inView:from.view animated:YES];
-        
-    } else {
-        /**
-         * 现保存到系统相册, 再跳转 Instagram 应用分享.
-         **/
-        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
-    }
+    /**
+     * 先保存到系统相册, 再跳转 Instagram 应用分享.
+     **/
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
 }
 
 - (void)shareVideoWithLocalURL:(NSURL *)localeVideoURL
-                    description:(NSString *)description
-                           from:(UIViewController *)from {
-    
-    
+                    description:(NSString *)description{
+
     UISaveVideoAtPathToSavedPhotosAlbum(localeVideoURL.path, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
 
 }
