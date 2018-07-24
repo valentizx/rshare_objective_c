@@ -19,7 +19,7 @@
 @property (nonatomic, strong) TencentOAuth* oauth;
 @property (nonatomic, strong) RQqHelper* helper;
 @property (nonatomic, assign) QQApiSendResultCode resultCode;
-@property (nonatomic, copy) share share;
+@property (nonatomic, copy) RShareCompletion share;
 
 @end
 
@@ -57,7 +57,7 @@ static RQqManager* _instance = nil;
 }
 
 #pragma mark - 分享逻辑 -
-- (void)shareTextToQQ:(NSString *)text scene:(RQQShareScene)scene completion:(share)share {
+- (void)shareTextToQQ:(NSString *)text scene:(RQQShareScene)scene completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKQQ]) {
         NSLog(@"QQ 未安装");
@@ -72,7 +72,7 @@ static RQqManager* _instance = nil;
                  title:(NSString *)title
            description:(NSString *)description
                  scene:(RQQShareScene)scene
-              completion:(share)share {
+              completion:(RShareCompletion)share {
     if (![RPlatform isInstalled:RShareSDKQQ]) {
         NSLog(@"QQ 未安装");
         return;
@@ -87,7 +87,7 @@ static RQqManager* _instance = nil;
                    description:(NSString *)description
                     thumbImage:(UIImage*)thumbImage
                          scene:(RQQShareScene)scene
-                      completion:(share)share {
+                      completion:(RShareCompletion)share {
     if (![RPlatform isInstalled:RShareSDKQQ]) {
         NSLog(@"QQ 未安装");
         return;
@@ -104,7 +104,7 @@ static RQqManager* _instance = nil;
                   description:(NSString *)description
                    thumbImage:(UIImage *)thumbImage
                         scene:(RQQShareScene)scene
-                     completion:(share)share {
+                     completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKQQ]) {
         NSLog(@"QQ 未安装");
@@ -125,7 +125,7 @@ static RQqManager* _instance = nil;
                          thumbImage:(UIImage*)thumbImage
                          webpageURL:(NSString*)webpageURL
                               scene:(RQQShareScene)scene
-                           completion:(share)share
+                           completion:(RShareCompletion)share
                               {
                                   
     if (![RPlatform isInstalled:RShareSDKQQ]) {
@@ -142,7 +142,7 @@ static RQqManager* _instance = nil;
 }
 
 
-- (void)shareTextToQZone:(NSString *)text completion:(share)share {
+- (void)shareTextToQZone:(NSString *)text completion:(RShareCompletion)share {
     
     
     if (![RPlatform isInstalled:RShareSDKQQ]) {
@@ -155,7 +155,7 @@ static RQqManager* _instance = nil;
     [self handleResultCode:_resultCode];
 }
 
-- (void)shareImagesToQZone:(NSArray<UIImage *> *)images description:(NSString*)description completion:(share)share {
+- (void)shareImagesToQZone:(NSArray<UIImage *> *)images description:(NSString*)description completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKQQ]) {
         NSLog(@"QQ 未安装");
@@ -171,7 +171,7 @@ static RQqManager* _instance = nil;
 
 - (void)shareVideoToQZoneWithAssetURL:(NSURL *)videoAssetURL
                           description:(NSString *)description
-                             completion:(share)share {
+                             completion:(RShareCompletion)share {
     
     
     if (![RPlatform isInstalled:RShareSDKQQ]) {

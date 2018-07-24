@@ -16,7 +16,7 @@
 
 
 
-@property (copy, nonatomic) share share;
+@property (copy, nonatomic) RShareCompletion share;
 
 @end
 
@@ -56,7 +56,7 @@ static RTumblrManager* _instance = nil;
               description:(NSString *)description
                webpageURL:(NSString *)webpageURL
                      from:(UIViewController *)from
-                completion:(share)share {
+                completion:(RShareCompletion)share {
     _share = share;
     FlurryImageShareParameters* param = [[FlurryImageShareParameters alloc]init];
     param.imageURL = imageURL;
@@ -70,7 +70,7 @@ static RTumblrManager* _instance = nil;
             title:(NSString *)title
        webpageURL:(NSString *)webpageURL
              from:(UIViewController *)from
-        completion:(share)share {
+        completion:(RShareCompletion)share {
     _share = share;
     FlurryTextShareParameters* param = [[FlurryTextShareParameters alloc]init];
     param.text = text;

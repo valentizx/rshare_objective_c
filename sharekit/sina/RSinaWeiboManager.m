@@ -12,7 +12,7 @@
 
 @interface RSinaWeiboManager()<WeiboSDKDelegate, WBMediaTransferProtocol>
 
-@property (nonatomic, copy) share share;
+@property (nonatomic, copy) RShareCompletion share;
 @property (nonatomic, strong) WBMessageObject* message;
 @property (nonatomic, strong) WBSendMessageToWeiboRequest* request;
 
@@ -59,7 +59,7 @@ static RSinaWeiboManager* _instance = nil;
 
 #pragma mark - 分享逻辑 -
 
-- (void)shareText:(NSString *)text completion:(share)share {
+- (void)shareText:(NSString *)text completion:(RShareCompletion)share {
     
     
     if (![RPlatform isInstalled:RShareSDKSina]) {
@@ -75,7 +75,7 @@ static RSinaWeiboManager* _instance = nil;
 - (void)shareImage:(NSArray<UIImage *> *)images
               text:(NSString*)text
            toStory:(BOOL)isToStory
-         completion:(share)share {
+         completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKSina]) {
         NSLog(@"新浪微博未安装");
@@ -96,7 +96,7 @@ static RSinaWeiboManager* _instance = nil;
 - (void)shareVideoWithLocalURL:(NSURL *)localVideoURL
                            text:(NSString *)text
                         toStory:(BOOL)isToStory
-                      completion:(share)share {
+                      completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKSina]) {
         NSLog(@"新浪微博未安装");
@@ -118,7 +118,7 @@ static RSinaWeiboManager* _instance = nil;
                       title:(NSString *)title
                 description:(NSString *)description
                  thumbImage:(UIImage *)image
-                   completion:(share)share {
+                   completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKSina]) {
         NSLog(@"新浪微博未安装");

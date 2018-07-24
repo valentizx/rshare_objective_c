@@ -41,7 +41,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
  */
 - (void)shareText:(NSString*)text
             scene:(RWXTargetScene)scene
-        completion:(nullable share)share;
+        completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
  */
 - (void)shareImage:(UIImage*)image
              scene:(RWXTargetScene)scene
-         completion:(nullable share)share;
+         completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -71,7 +71,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
                 description:(nullable NSString*)description
                  thumbImage:(nullable UIImage*)image
                       scene:(RWXTargetScene)scene
-                  completion:(nullable share)share;
+                  completion:(nullable RShareCompletion)share;
 
 
 
@@ -90,7 +90,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
               description:(nullable NSString*)description
                thumbImage:(nullable UIImage*)image
                     scene:(RWXTargetScene)scene
-                completion:(nullable share)share;
+                completion:(nullable RShareCompletion)share;
 
 /**
  分享音乐.
@@ -109,7 +109,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
                     description:(nullable NSString*)description
                      thumbImage:(nullable UIImage*)image
                           scene:(RWXTargetScene)scene
-                      completion:(nullable share)share;
+                      completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
                          description:(nullable NSString*)description
                           thumbImage:(nullable UIImage*)image
                                scene:(RWXTargetScene)scene
-                           completion:(nullable share)share;
+                           completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
                     title:(NSString*)title
                thumbImage:(UIImage*)image
                     scene:(RWXTargetScene)scene
-               completion:(nullable share)share;
+               completion:(nullable RShareCompletion)share;
 
 
 - (BOOL)application:(UIApplication *)application

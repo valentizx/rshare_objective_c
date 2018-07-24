@@ -32,7 +32,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
  @param scene 分享场景 (普通好友列表、我的电脑和我的收藏).
  @param share 分享回调.
  */
-- (void)shareTextToQQ:(NSString*)text scene:(RQQShareScene)scene completion:(nullable share)share;
+- (void)shareTextToQQ:(NSString*)text scene:(RQQShareScene)scene completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -49,7 +49,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
                  title:(NSString*)title
            description:(nullable NSString*)description
                  scene:(RQQShareScene)scene
-              completion:(nullable share)share;
+              completion:(nullable RShareCompletion)share;
 
 /**
  分享网页至 QQ.
@@ -66,7 +66,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
                     description:(nullable NSString*)description
                      thumbImage:(nullable UIImage*)thumbImage
                           scene:(RQQShareScene)scene
-                       completion:(nullable share)share;
+                       completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -85,7 +85,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
                   description:(nullable NSString*)description
                    thumbImage:(nullable UIImage*)thumbImage
                         scene:(RQQShareScene)scene
-                     completion:(nullable share)share;
+                     completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -105,7 +105,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
                          thumbImage:(nullable UIImage*)thumbImage
                          webpageURL:(nullable NSString*)webpageURL
                               scene:(RQQShareScene)scene
-                           completion:(nullable share)share;
+                           completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -114,7 +114,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
  @param text 文字内容.
  @param share 分享回调.
  */
-- (void)shareTextToQZone:(NSString*)text completion:(share)share;
+- (void)shareTextToQZone:(NSString*)text completion:(RShareCompletion)share;
 
 
 /**
@@ -126,7 +126,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
  */
 - (void)shareImagesToQZone:(NSArray<UIImage*>*)images
                description:(nullable NSString*)description
-                  completion:(nullable share)share;
+                  completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -138,7 +138,7 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
  */
 - (void)shareVideoToQZoneWithAssetURL:(NSURL*)videoAssetURL
                           description:(nullable NSString*)description
-                             completion:(nullable share)share;
+                             completion:(nullable RShareCompletion)share;
 
 
 - (BOOL)application:(UIApplication *)application

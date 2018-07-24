@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
                     hashTag:(nullable NSString*)hashTag
                        from:(UIViewController*)from
                        mode:(Mode)mode
-                 completion:(nullable share)share;
+                 completion:(nullable RShareCompletion)share;
 
 /**
  分享照片.
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)sharePhotos:(NSArray<UIImage*>*)photos
                from:(UIViewController*)from
-         completion:(nullable share)share;
+         completion:(nullable RShareCompletion)share;
 
 
 /**

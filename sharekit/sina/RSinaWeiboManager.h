@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param text 博文内容.
  @param share 分享回调.
  */
-- (void)shareText:(NSString*)text completion:(nullable share)share;
+- (void)shareText:(NSString*)text completion:(nullable RShareCompletion)share;
 
 
 /**
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)shareImage:(NSArray<UIImage*>*)images
               text:(nullable NSString*)text
            toStory:(BOOL)isToStory
-         completion:(nullable share)share;
+         completion:(nullable RShareCompletion)share;
 
 
 
@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)shareVideoWithLocalURL:(NSURL*)localVideoURL
                            text:(nullable NSString*)text
                         toStory:(BOOL)isToStory
-                      completion:(nullable share)share;
+                      completion:(nullable RShareCompletion)share;
 
 
 
@@ -81,7 +81,7 @@ NS_ASSUME_NONNULL_BEGIN
                       title:(nullable NSString*)title
                 description:(nullable NSString*)description
                  thumbImage:(nullable UIImage*)image
-                   completion:(nullable share)share;
+                   completion:(nullable RShareCompletion)share;
 
 
 - (BOOL)application:(UIApplication *)application

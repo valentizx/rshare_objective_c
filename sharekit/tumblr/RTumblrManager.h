@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
               description:(nullable NSString*)description
                webpageURL:(nullable NSString*)webpageURL
                      from:(UIViewController*)from
-                completion:(nullable share)share;
+                completion:(nullable RShareCompletion)share;
 
 /**
  分享文字.
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
             title:(nullable NSString *)title
        webpageURL:(nullable NSString *)webpageURL
              from:(UIViewController *)from
-        completion:(nullable share)share;
+        completion:(nullable RShareCompletion)share;
 
 @end
 NS_ASSUME_NONNULL_END

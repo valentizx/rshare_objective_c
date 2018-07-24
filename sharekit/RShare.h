@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, Mode) {
     ShareModeSystem
 };
 
-typedef void (^share)(RShareSDKPlatform platform, ShareResult result, NSString* _Nullable errorInfo);
+typedef void (^RShareCompletion)(RShareSDKPlatform platform, ShareResult result, NSString* _Nullable errorInfo);
 typedef void (^onConfigure)(RShareSDKPlatform platform, RRegister* obj);
 
 

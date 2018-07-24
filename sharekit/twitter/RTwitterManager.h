@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
                        text:(nullable NSString*)text
                       image:(nullable UIImage*)image
                        from:(UIViewController*)from
-                 completion:(nullable share)share;
+                 completion:(nullable RShareCompletion)share;
 
 @end
 NS_ASSUME_NONNULL_END

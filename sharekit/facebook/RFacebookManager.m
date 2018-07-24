@@ -14,7 +14,7 @@
 
 @interface RFacebookManager()<FBSDKSharingDelegate>
 
-@property (nonatomic, copy) share shareCompletion;
+@property (nonatomic, copy) RShareCompletion shareCompletion;
 @property (nonatomic, strong) FBSDKShareDialog* dialog;
 @end
 
@@ -50,7 +50,7 @@ static RFacebookManager* _instance = nil;
                     hashTag:(NSString *)hashTag
                        from:(UIViewController *)from
                        mode:(Mode)mode
-                 completion:(share)share {
+                 completion:(RShareCompletion)share {
     
     
     if (mode == ShareModeNative && ![RPlatform isInstalled:RShareSDKFacebook]) {
@@ -74,7 +74,7 @@ static RFacebookManager* _instance = nil;
 // 分享照片
 - (void)sharePhotos:(NSArray<UIImage *> *)photos
                from:(UIViewController *)from
-         completion:(share)share {
+         completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKFacebook]) {
         NSLog(@"Facebook 未安装");

@@ -51,7 +51,7 @@ static RTwitterManager* _instance = nil;
                        text:(NSString *)text
                       image:(UIImage *)image
                        from:(UIViewController *)from
-                 completion:(share)share {
+                 completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKTwitter]) {
         NSLog(@"Twitter 未安装");
