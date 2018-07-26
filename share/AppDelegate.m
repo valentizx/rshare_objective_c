@@ -12,6 +12,7 @@
 #import "RWechatManager.h"
 #import "RSinaWeiboManager.h"
 #import "RQqManager.h"
+#import "RPinterestManager.h"
 
 @interface AppDelegate ()
 
@@ -35,8 +36,10 @@
     // 新浪测试
     // return [[RSinaWeiboManager shared] application:app openURL:url options:options];
     
-    // QQ测试
-    return [[RQqManager shared] application:app openURL:url options:nil];
+    // QQ 测试
+    // return [[RQqManager shared] application:app openURL:url options:nil];
+    // Pinterest 测试
+    return [[RPinterestManager shared]application:app openURL:url options:nil];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

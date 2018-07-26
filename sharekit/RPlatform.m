@@ -36,6 +36,8 @@
     } else if (platform == RShareSDKLine) {
         appString = @"line://";
         
+    } else if (platform == RShareSDKPinterest){
+        appString = @"pinterestsdk.v1://";
     } else {
         return false;
     }

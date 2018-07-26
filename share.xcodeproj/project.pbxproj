@@ -47,6 +47,8 @@
 		CF5C7D6820BE979100B96666 /* RTwitterManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5C7D6620BE979100B96666 /* RTwitterManager.h */; };
 		CF5C7D6920BE979100B96666 /* RTwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5C7D6720BE979100B96666 /* RTwitterManager.m */; };
 		CF8FD71E20E7A8450017A83F /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8FD71D20E7A8450017A83F /* libWeChatSDK.a */; };
+		CF9A30BB210819B000CE6A3E /* RPinterestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9A30B9210819B000CE6A3E /* RPinterestManager.h */; };
+		CF9A30BC210819B000CE6A3E /* RPinterestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9A30BA210819B000CE6A3E /* RPinterestManager.m */; };
 		CFA0781320E4CE890058018D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA0781220E4CE890058018D /* AssetsLibrary.framework */; };
 		CFBBBCCA20C12A7E00F5FDA5 /* RInstagramManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBBBCC820C12A7E00F5FDA5 /* RInstagramManager.h */; };
 		CFBBBCCB20C12A7E00F5FDA5 /* RInstagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBBCC920C12A7E00F5FDA5 /* RInstagramManager.m */; };
@@ -169,6 +171,8 @@
 		CF8FD71B20E7A8450017A83F /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		CF8FD71C20E7A8450017A83F /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		CF8FD71D20E7A8450017A83F /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		CF9A30B9210819B000CE6A3E /* RPinterestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPinterestManager.h; sourceTree = "<group>"; };
+		CF9A30BA210819B000CE6A3E /* RPinterestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPinterestManager.m; sourceTree = "<group>"; };
 		CFA0781220E4CE890058018D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		CFBBBCC820C12A7E00F5FDA5 /* RInstagramManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RInstagramManager.h; sourceTree = "<group>"; };
 		CFBBBCC920C12A7E00F5FDA5 /* RInstagramManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RInstagramManager.m; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 		CF5C7D2820BE326900B96666 /* sharekit */ = {
 			isa = PBXGroup;
 			children = (
+				CF9A30B82108198A00CE6A3E /* pinterest */,
 				CFDC64B9210583B0002B87BA /* line */,
 				CF1A1C6120E1D8BD00128E31 /* tumblr */,
 				CF21E23120E0DD2A00B6BA74 /* whatsapp */,
@@ -438,6 +443,15 @@
 			path = thirdSdk/WechatSDK1.8.2;
 			sourceTree = "<group>";
 		};
+		CF9A30B82108198A00CE6A3E /* pinterest */ = {
+			isa = PBXGroup;
+			children = (
+				CF9A30B9210819B000CE6A3E /* RPinterestManager.h */,
+				CF9A30BA210819B000CE6A3E /* RPinterestManager.m */,
+			);
+			path = pinterest;
+			sourceTree = "<group>";
+		};
 		CFBBBCC720C12A3700F5FDA5 /* instagram */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +525,7 @@
 				CF5C7D6820BE979100B96666 /* RTwitterManager.h in Headers */,
 				CFE6078E20DB4EDC007A60C2 /* RQqManager.h in Headers */,
 				CFD133DA20E37C39004CED6C /* RShareManager.h in Headers */,
+				CF9A30BB210819B000CE6A3E /* RPinterestManager.h in Headers */,
 				CFD733EB20BF8CEF006483E2 /* RTwitterAuthHelper.h in Headers */,
 				CF3F68CC20C781E700AA0DCE /* RSinaWeiboManager.h in Headers */,
 				CFDC64BC210583D0002B87BA /* RLineManager.h in Headers */,
@@ -760,19 +775,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-share/Pods-share-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Flurry-iOS-SDK/Flurry_iOS_SDK.framework",
+				"${BUILT_PRODUCTS_DIR}/PinterestSDK/PinterestSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flurry_iOS_SDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
@@ -838,6 +859,7 @@
 				CFE6078F20DB4EDC007A60C2 /* RQqManager.m in Sources */,
 				CFD26E8B20C6811300F0EFF9 /* RWechatHelper.m in Sources */,
 				CF50351D20DCC8DE007497FF /* RGooglePlusManager.m in Sources */,
+				CF9A30BC210819B000CE6A3E /* RPinterestManager.m in Sources */,
 				CF5C7D4620BE3F2500B96666 /* RShare.m in Sources */,
 				CFD133DB20E37C39004CED6C /* RShareManager.m in Sources */,
 				CFD733EC20BF8CEF006483E2 /* RTwitterAuthHelper.m in Sources */,

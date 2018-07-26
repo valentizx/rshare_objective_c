@@ -9,5 +9,6 @@ target 'sharekit' do
     pod 'FBSDKShareKit'
     pod "TwitterKit"
     pod 'Flurry-iOS-SDK/TumblrAPI'
+    pod "PinterestSDK", :git => "https://github.com/pinterest/ios-pdk.git"
     
 end

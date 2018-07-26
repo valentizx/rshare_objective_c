@@ -113,7 +113,7 @@ static RWechatManager* _instance = nil;
                     description:(NSString *)description
                      thumbImage:(UIImage *)image
                           scene:(RWXTargetScene)scene
-                      completion:(RShareCompletion)share {
+                     completion:(RShareCompletion)share {
     
     if (![RPlatform isInstalled:RShareSDKWechat]) {
         NSLog(@"微信未安装");
@@ -180,7 +180,7 @@ static RWechatManager* _instance = nil;
 - (void)onResp:(BaseResp *)resp {
     if (_shareCompetion != nil) {
         if (resp.errCode == 0) {
-            _shareCompetion(RShareSDKWechat, RShareResultSuccess ,nil);
+            _shareCompetion(RShareSDKWechat, RShareResultSuccess, nil);
         } else if (resp.errCode == -2) {
             _shareCompetion(RShareSDKWechat, RShareResultCancel, nil);
         } else {

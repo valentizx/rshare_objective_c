@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, RShareSDKPlatform) {
     RShareSDKTumblr,
     RShareSDKWhatsApp,
     RShareSDKLine,
+    RShareSDKPinterest,
     RShareSDKOther
 };
 

@@ -18,6 +18,7 @@
 #import "RGooglePlusManager.h"
 #import "RTumblrManager.h"
 #import "RLineManager.h"
+#import "RPinterestManager.h"
 
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -58,7 +59,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     _videoURLLabel.text = @"1, 若分享本地视频, 请先点击「获取视频URL」按钮; \n2, 在分享本地视频的过程中, 注意 demo 中 localVideoURL 和 localVideoURL2 的区别⚠️.";
     
@@ -134,7 +134,22 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     }];
     
 }
+#pragma mark - Pinterest - 
 
+- (IBAction)shareImgPin:(id)sender {
+    RPinterestManager* manager = [RPinterestManager shared];
+    [manager sdkInitializeByAppID:@"4979706154532747851" appSecret:nil];
+    [manager shareImageWithURL:_netImageURL webpageURL:_webpageURL onBoard:@"123" description:_description  from:self completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+        if (result == RShareResultSuccess) {
+            NSLog(@"分享成功");
+        } else if (result == RShareResultCancel){
+            NSLog(@"分享取消");
+        } else {
+            NSLog(@"分享失败%@", errorInfo);
+            
+        }
+    }];
+}
 
 #pragma mark - Instagram -
 - (IBAction)shareInsPh:(id)sender {

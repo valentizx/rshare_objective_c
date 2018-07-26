@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -15,6 +30,10 @@ PODS:
   - Flurry-iOS-SDK/TumblrAPI (8.5.0):
     - Flurry-iOS-SDK/FlurryAds
     - Flurry-iOS-SDK/FlurrySDK
+  - PinterestSDK (1.0.2):
+    - AFNetworking (~> 3.0)
+    - SAMKeychain
+  - SAMKeychain (1.5.3)
   - TwitterCore (3.1.0)
   - TwitterKit (3.3.0):
     - TwitterCore (>= 3.1.0)
@@ -22,25 +41,40 @@ PODS:
 DEPENDENCIES:
   - FBSDKShareKit
   - Flurry-iOS-SDK/TumblrAPI
+  - PinterestSDK (from `https://github.com/pinterest/ios-pdk.git`)
   - TwitterKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AFNetworking
     - Bolts
     - FBSDKCoreKit
     - FBSDKShareKit
     - Flurry-iOS-SDK
+    - SAMKeychain
     - TwitterCore
     - TwitterKit
 
+EXTERNAL SOURCES:
+  PinterestSDK:
+    :git: https://github.com/pinterest/ios-pdk.git
+
+CHECKOUT OPTIONS:
+  PinterestSDK:
+    :commit: 798ac68e083324195c05732c0dceeda8d363df0a
+    :git: https://github.com/pinterest/ios-pdk.git
+
 SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
   FBSDKShareKit: 511d1dfc71204c0a8d69e6c5e3c964dcf0d4f3d9
   Flurry-iOS-SDK: d3bf60cf6be3a9d95d98c144bd17210dfa669116
+  PinterestSDK: 798aced4e2ce7a9607b3df1ac77abf2c72f57734
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 13dc63bd61877eaf7240a9b01090401ee09c09da
+PODFILE CHECKSUM: 26a15ce82b4eb8933724989f5233bb265818c740
 
 COCOAPODS: 1.5.3
