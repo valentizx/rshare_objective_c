@@ -41,6 +41,10 @@ static RTumblrManager* _instance = nil;
     return _instance;
 }
 
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKTumblr, [RRegister shared]);
+}
+
 - (void)sdkInitializeByConsumerKey:(NSString *)key consumerSecret:(NSString *)secret {
 
     [FlurryTumblr setConsumerKey:key consumerSecret:secret];

@@ -19,21 +19,20 @@
 #import "RTumblrManager.h"
 #import "RLineManager.h"
 #import "RPinterestManager.h"
+#import "NSString+Extension.h"
 
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImage* image;
 @property (nonatomic, strong) NSURL* localImageURL;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *videoURLLabel;
 
 
 
-@property (strong, nonatomic) NSURL* localVideoURL; // QQ 和 Facebook 可用
-@property (strong, nonatomic) NSURL* localVideoURL2; // 新浪微博 和 Instagram 可用
+@property (strong, nonatomic) NSURL* videoAssetURL; // QQ 和 Facebook 可用 asset
+@property (strong, nonatomic) NSURL* videoFileURL; // 新浪微博和 Instagram 可用 file
 
-@property (strong, nonatomic) PHAsset* asset;
 
 @end
 
@@ -71,7 +70,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     
 
     RFacebookManager* manager = [RFacebookManager shared];
-    [manager sdkInitializeByID:@"234270717151331" secret:nil];
     [manager shareWebpageWithURL:_webpageURL
                            quote:_description
                          hashTag:_hashTag
@@ -90,7 +88,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareFbPhotos:(id)sender {
     RFacebookManager* manager = [RFacebookManager shared];
-    [manager sdkInitializeByID:@"234270717151331" secret:nil];
     UIImage* image = [UIImage imageNamed:@"c"];
     [manager sharePhotos:@[image, image, image, image, image, image]
                     from:self
@@ -109,10 +106,9 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
     
     RFacebookManager* manager = [RFacebookManager shared];
-    [manager sdkInitializeByID:@"234270717151331" secret:nil];
 
 
-    [manager shareVideoWithLocalURL:_localVideoURL from:self];
+    [manager shareVideoWithLocalURL:_videoAssetURL from:self];
     
     
 }
@@ -121,7 +117,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - Twitter -
 - (IBAction)shareTwWeb:(id)sender {
     RTwitterManager* manager = [RTwitterManager shared];
-    [manager sdkInitializeByConsumerKey:@"cA72pVIFxOOWWfT8t9sFLcNUS" consumerSecret:@"Rc9ornOaSWTFYqFzxDIEtIcsaWoxRcVGJs6U71kAjhHcGHyEZi"];
     [manager shareWithWebpageURL:_webpageURL text:_description image:_image from:self completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -132,13 +127,11 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
             
         }
     }];
-    
 }
 #pragma mark - Pinterest - 
 
 - (IBAction)shareImgPin:(id)sender {
     RPinterestManager* manager = [RPinterestManager shared];
-    [manager sdkInitializeByAppID:@"4979706154532747851" appSecret:nil];
     [manager shareImageWithURL:_netImageURL webpageURL:_webpageURL onBoard:@"123" description:_description  from:self completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -159,7 +152,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (IBAction)shareInsVid:(id)sender {
     RInstagramManager* manager = [RInstagramManager shared];
-    [manager shareVideoWithLocalURL:_localVideoURL2 description:_description];
+    [manager shareVideoWithLocalURL:_videoFileURL description:_description];
     
 }
 
@@ -167,7 +160,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - Wehchat -
 - (IBAction)shareTextWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
     [manager shareText:_description scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -181,7 +173,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)sharePhWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
     [manager shareImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -195,7 +186,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareWebWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
+
     [manager shareWebpageWithURL:_webpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -208,7 +199,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareVideoWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
+
     [manager shareVideoWithURL:_videoWebpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -221,7 +212,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareMsicWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
+
     
     [manager shareMusicWithStreamURL:_audioStreamURL webpageURL:_audioWebpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
@@ -235,7 +226,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareMiniProgrWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
     
     [manager shareMiniProgramWithUserName:@"gh_d43f693ca31f" path:@"pages/play/index?cid=fvue88y1fsnk4w2&ptag=vicyao&seek=3219" type:RWXMiniProgramTypeRelease webpageURL:_webpageURL title:_title description:_description thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
@@ -250,7 +240,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (IBAction)shareFileWx:(id)sender {
     RWechatManager* manager = [RWechatManager shared];
-    [manager sdkInitializeByAppID:@"wxd471bcf3a21c7c4a" appSecret:@"f71570ef272a5a6699decb264be9cdbb"];
     
     
     NSData* docData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"list" ofType:@"docx"]];
@@ -262,7 +251,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     NSData* pdfData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Liberation" ofType:@"pdf"]];
     NSString* pdfExt = @"pdf";
     
-    [manager shareFileWithData:docData extension:docExt title:_title thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareFileWithData:[NSData dataWithContentsOfFile:[_videoFileURL path]] extension:@"mp4" title:_title thumbImage:_image scene:Favorite completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -279,7 +268,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - 微博 -
 - (IBAction)shareTextWb:(id)sender {
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
-    [manager sdkInitializeByAppKey:@"3026908911" appSecret:@"91fbafc7be7510c0ac5d73883c655db1"];
     [manager shareText:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -293,7 +281,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)sharePhWb:(id)sender {
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
-    [manager sdkInitializeByAppKey:@"3026908911" appSecret:@"91fbafc7be7510c0ac5d73883c655db1"];
 
     UIImage* image = [UIImage imageNamed:@"c"];
     [manager shareImage:@[image, image, image, image, image, image] text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
@@ -307,13 +294,11 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     }];
 }
 - (IBAction)shareVidWb:(id)sender {
+    
+    
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
-    [manager sdkInitializeByAppKey:@"3026908911" appSecret:@"91fbafc7be7510c0ac5d73883c655db1"];
     
-    
-    NSLog(@"⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️%@", _localVideoURL);
-    
-    [manager shareVideoWithLocalURL:_localVideoURL2 text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareVideoWithLocalURL:_videoFileURL text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -327,7 +312,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (IBAction)shareWebWb:(id)sender {
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
-    [manager sdkInitializeByAppKey:@"3026908911" appSecret:@"91fbafc7be7510c0ac5d73883c655db1"];
+
     [manager shareWebpageWithURL:_webpageURL objectID:@"id" title:_title description:_description thumbImage:[UIImage imageNamed:@"logo"] completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -341,7 +326,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - QQ -
 - (IBAction)shareTextQq:(id)sender {
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
     [manager shareTextToQQ:_title scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -355,7 +339,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 - (IBAction)shareImgQq:(id)sender {
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
+
     [manager shareImageToQQ:_image title:_title description:_description scene:RQQShareAutomatic completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -370,7 +354,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareWebQq:(id)sender {
     
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
     [manager shareWebpageToQQWithURL:_webpageURL title:_title description:_description thumbImage:_image scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -385,7 +368,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareVidQq:(id)sender {
     
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
     [manager shareVideoToQQWithURL:_videoWebpageURL title:_title description:_description thumbImage:_image scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -398,7 +380,6 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareAudQq:(id)sender {
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
     [manager shareAudioToQQWithStreamURL:_audioStreamURL title:_title description:_description thumbImage:_image webpageURL:_webpageURL scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -409,10 +390,28 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
         }
     }];
 }
+
+- (IBAction)shareFileQq:(id)sender {
+    NSData* videoData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ca" ofType:@"mp4"]];
+    
+    RQqManager* manager = [RQqManager shared];
+    
+    
+    [manager shareFileToQQWithFileData:[NSData dataWithContentsOfFile:[_videoFileURL path]] fileName:[NSString stringWithFormat:@"%@.%@", [NSString randomFileName], @"mp4"] title:_title description:_description thumbImage:_image completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+        if (result == RShareResultSuccess) {
+            NSLog(@"分享成功");
+        } else if (result == RShareResultCancel){
+            NSLog(@"分享取消");
+        } else {
+            NSLog(@"分享失败%@", errorInfo);
+        }
+    }];
+}
+
 - (IBAction)shareTextQz:(id)sender {
     
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
+
     [manager shareTextToQZone:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -427,7 +426,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     UIImage* image = [UIImage imageNamed:@"c"];
    
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
+
     [manager shareImagesToQZone:@[image , image, image, image, image, image, image]  description:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -441,8 +440,8 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareVidQz:(id)sender {
     
     RQqManager* manager = [RQqManager shared];
-    [manager sdkInitializeByAppID:@"1106463933" appKey:@"4WSrOXMoeFMDNR2k"];
-    [manager shareVideoToQZoneWithAssetURL:_localVideoURL description:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+
+    [manager shareVideoToQZoneWithAssetURL:_videoAssetURL description:_description completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -466,7 +465,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - Tumblr -
 - (IBAction)shareImgTm:(id)sender {
     RTumblrManager* manager = [RTumblrManager shared];
-    [manager sdkInitializeByConsumerKey:@"ZJIv7SNrKMcct5tdQy7rzzsv3b0pTxBNYWkV548LgbIDIwsnPt" consumerSecret:@"7jsraXodsVSeMHMLtHg5FYyporapRTf2ahJFK2tsnV4x0fYjse"];
+   
     [manager shareImageWithURL:_netImageURL description:_description webpageURL:_webpageURL from:self completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -480,7 +479,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareTextTm:(id)sender {
     RTumblrManager* manager = [RTumblrManager shared];
-    [manager sdkInitializeByConsumerKey:@"ZJIv7SNrKMcct5tdQy7rzzsv3b0pTxBNYWkV548LgbIDIwsnPt" consumerSecret:@"7jsraXodsVSeMHMLtHg5FYyporapRTf2ahJFK2tsnV4x0fYjse"];
+
     [manager shareText:_description title:_title webpageURL:_webpageURL from:self completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
@@ -496,11 +495,11 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
 #pragma mark - Line -
 - (IBAction)shareTextLi:(id)sender {
-    [RLineManager.shared shareText:_description];
+    [[RLineManager shared] shareText:_description];
 }
 
 - (IBAction)shareImgLi:(id)sender {
-    [RLineManager.shared shareImage:_image];
+    [[RLineManager shared] shareImage:_image];
 }
 
 - (IBAction)getVideoURL:(id)sender {
@@ -521,12 +520,16 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 
     [picker dismissViewControllerAnimated:true completion:^{
     
-        self-> _localVideoURL2 = [info objectForKey:UIImagePickerControllerMediaURL];
-        self-> _localVideoURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-        NSLog(@"💚💚💚💚💚💚💚💚💚💚💚💚%@", [self-> _localVideoURL2 absoluteString]);
+        self-> _videoFileURL = [info objectForKey:UIImagePickerControllerMediaURL];
+        self-> _videoAssetURL = [info objectForKey:UIImagePickerControllerReferenceURL];
+        NSLog(@"💚💚💚💚💚💚💚💚💚💚💚💚%@", [self-> _videoFileURL absoluteString]);
         
-        NSLog(@"♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️%@", [self-> _localVideoURL absoluteString]);
+        NSLog(@"♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️%@", [self-> _videoAssetURL absoluteString]);
+        
+        NSLog(@"💛💛💛💛💛💛💛💛💛💛💛💛后缀名%@", self->_videoFileURL.path.extension);
     }];
+    
+
 }
 
 @end

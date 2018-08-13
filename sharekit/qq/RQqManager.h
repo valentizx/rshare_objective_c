@@ -21,7 +21,9 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
 
 + (instancetype)shared;
 
-- (void)sdkInitializeByAppID:(NSString*)AppID appKey:(NSString*)key;
+- (void)connect:(RConfiguration)c;
+
+- (void)sdkInitializeByAppID:(NSString*)appID appKey:(NSString*)key;
 
 
 
@@ -106,6 +108,26 @@ typedef NS_ENUM(uint64_t, RQQShareScene) {
                          webpageURL:(nullable NSString*)webpageURL
                               scene:(RQQShareScene)scene
                            completion:(nullable RShareCompletion)share;
+
+
+/**
+ 分享文件到 QQ (只能分享到数据线功能).
+
+ @param fileData Data 格式文件数据.
+ @param fileName 文件名.
+ @param title 标题.
+ @param description 文件描述.
+ @param thumbImage 缩略图.
+ @param share 分享回调.
+
+ @note fileName 字段最优的设置方式是「文件名 + 扩展名」, 形如: HelloWorld.doc, 单纯的设置 Helloworld, 点开对话框文件图标显示「？」, 并且无法打开和查看, 设置好扩展名后 QQ 内置的文件解析是可以本地查看或者打开的(常见的文件测试打开正常, 较不常见的视频格式和文件格式无法打开).
+ */
+- (void)shareFileToQQWithFileData:(NSData*)fileData
+                         fileName:(NSString*)fileName
+                            title:(nullable NSString*)title
+                     description :(nullable NSString*)description
+                       thumbImage:(UIImage*)thumbImage
+                       completion:(nullable RShareCompletion)share;
 
 
 /**

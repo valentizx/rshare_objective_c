@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RTwitterManager : RShare
 
 + (instancetype)shared;
+
+- (void)connect:(RConfiguration)c;
 /**
  ⚠️ Swift 版本一定要引入 MapKit 和 MobileCoreService 两个框架
  

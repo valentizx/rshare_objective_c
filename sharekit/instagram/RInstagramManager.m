@@ -37,6 +37,10 @@ static RInstagramManager* _instance = nil;
     });
     return _instance;
 }
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKInstagram, [RRegister shared]);
+}
+
 static NSURL* instagramLibraryURL() {
     NSString *str = [NSString stringWithFormat:@"instagram://library?AssetPath=%@", @""];
     return [NSURL URLWithString:str];

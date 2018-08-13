@@ -27,6 +27,9 @@ static RLineManager* _instance = nil;
     });
     return _instance;
 }
+- (void)connect:(RConfiguration)c {
+    c (RShareSDKLine, [RRegister shared]);
+}
 
 - (void)shareText:(NSString *)text {
     

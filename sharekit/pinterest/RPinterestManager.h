@@ -14,10 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+- (void)connect:(RConfiguration)c;
+
 /**
  * Pinterest 文档 https://developers.pinterest.com/docs/sdks/ios/?
  **/
 - (void)sdkInitializeByAppID:(NSString*)appID appSecret:(nullable NSString*)secret;
+
+
 
 - (void)shareImageWithURL:(NSString*)imageURL
                webpageURL:(NSString*)webpageURL

@@ -9,6 +9,7 @@
 #import "RPinterestManager.h"
 #import <PinterestSDK/PinterestSDK.h>
 #import <PinterestSDK/PDKPin.h>
+#import "RRegister.h"
 
 @implementation RPinterestManager
 
@@ -18,7 +19,9 @@ static RPinterestManager* _instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[[self class] alloc] init];
+        
     });
+    [_instance setPlatformObj:_instance];
     return _instance;
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone
@@ -30,6 +33,13 @@ static RPinterestManager* _instance = nil;
     return _instance;
 }
 
+- (void)setPlatformObj:(id)obj {
+    [super setPlatformObj:obj];
+}
+
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKPinterest, [RRegister shared]);
+}
 
 - (void)sdkInitializeByAppID:(NSString *)appID appSecret:(NSString *)secret {
     [PDKClient configureSharedInstanceWithAppId:appID];

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+-(void)connect:(RConfiguration)c;
+
 - (void)shareText:(NSString*)text;
 
 - (void)shareImage:(UIImage*)image;

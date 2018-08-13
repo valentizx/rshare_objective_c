@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+- (void)connect:(RConfiguration)c;
+
 /**
 
  初始化 Facebook SDK https://developers.facebook.com/apps

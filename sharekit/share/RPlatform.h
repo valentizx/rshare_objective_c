@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class PlatformBuilder;
 
 typedef NS_ENUM(NSInteger, RShareSDKPlatform) {
     RShareSDKWechat,
@@ -19,11 +20,29 @@ typedef NS_ENUM(NSInteger, RShareSDKPlatform) {
     RShareSDKWhatsApp,
     RShareSDKLine,
     RShareSDKPinterest,
+    RShareSDKGooglePlus,
     RShareSDKOther
 };
 
+
+
+typedef void (^PlatformBuilderBlock) (PlatformBuilder* builder);
+
 @interface RPlatform : NSObject
 
+
+@property (strong, nonatomic, readonly) NSArray<Class>* targets;
+
 + (BOOL) isInstalled:(RShareSDKPlatform)platform;
+
++ (RPlatform*)make:(PlatformBuilderBlock)block;
+
+@end
+
+@interface PlatformBuilder : NSObject
+
+
+- (instancetype)add:(RShareSDKPlatform)platform;
+- (RPlatform*)build;
 
 @end

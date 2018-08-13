@@ -15,12 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 + (instancetype)shared;
 
+- (void)connect:(RConfiguration)c;
+
 /**
  分享图片
  Instagram 无法进行多媒体分享, 只能进行单一的图片分享.
 
  @param image 图片.
- @param from 当前控制器.
  */
 - (void)share:(UIImage *)image;
 

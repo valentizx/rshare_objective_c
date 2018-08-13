@@ -38,6 +38,10 @@ static RFacebookManager* _instance = nil;
     return _instance;
 }
 
+- (void)connect:(RConfiguration)c {
+   c(RShareSDKFacebook, [RRegister shared]);
+}
+
 - (void)sdkInitializeByID:(NSString *)appId secret:(NSString *)secret {
     [FBSDKSettings setAppID:appId];
 }

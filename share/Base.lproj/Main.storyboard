@@ -276,6 +276,13 @@
                                     <action selector="shareImgPin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rKI-RQ-9aD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-Rn-Edt">
+                                <rect key="frame" x="232" y="324" width="54" height="30"/>
+                                <state key="normal" title="QQ文件"/>
+                                <connections>
+                                    <action selector="shareFileQq:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xmK-Xe-fOP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -284,6 +291,7 @@
                             <constraint firstItem="MbJ-bd-d1O" firstAttribute="top" secondItem="jQh-bk-nbN" secondAttribute="top" id="1Ma-LF-bIi"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="45Q-08-HUF" secondAttribute="trailing" constant="20" symbolic="YES" id="1ZD-zy-Ocs"/>
                             <constraint firstItem="2sr-wV-f9c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oYJ-co-9hI" secondAttribute="trailing" constant="8" symbolic="YES" id="1g6-BC-UB1"/>
+                            <constraint firstItem="BXH-Rn-Edt" firstAttribute="top" secondItem="M9Z-fn-6tF" secondAttribute="top" id="1mj-dV-l6e"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jQh-bk-nbN" secondAttribute="trailingMargin" id="1tp-S5-SvU"/>
                             <constraint firstItem="Kdo-cy-rGh" firstAttribute="top" secondItem="45Q-08-HUF" secondAttribute="top" id="2LI-nm-969"/>
                             <constraint firstAttribute="trailing" secondItem="M9Z-fn-6tF" secondAttribute="trailing" constant="151" id="2RH-QV-wdO"/>
@@ -300,6 +308,7 @@
                             <constraint firstItem="jQh-bk-nbN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BeL-W3-ELq"/>
                             <constraint firstItem="cEp-jq-BBe" firstAttribute="top" secondItem="Rfm-fj-CQp" secondAttribute="top" id="DTt-cM-SYP"/>
                             <constraint firstItem="fT2-Ol-NsA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Epn-SB-9jT"/>
+                            <constraint firstItem="BXH-Rn-Edt" firstAttribute="leading" secondItem="M9Z-fn-6tF" secondAttribute="trailing" constant="8" id="Ewy-ZB-2QY"/>
                             <constraint firstItem="wFF-9E-ba9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FXX-7b-DCc"/>
                             <constraint firstItem="BZs-be-yqU" firstAttribute="top" secondItem="dDD-wc-dC8" secondAttribute="bottom" constant="8" id="FmA-Sn-B9Q"/>
                             <constraint firstItem="fhS-aR-YvQ" firstAttribute="leading" secondItem="wFF-9E-ba9" secondAttribute="trailing" constant="10" id="FzB-Gc-cAU"/>

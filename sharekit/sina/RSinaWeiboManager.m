@@ -41,6 +41,7 @@ static RSinaWeiboManager* _instance = nil;
     dispatch_once(&onceToken, ^{
         _instance = [[[self class] alloc] init];
     });
+    [_instance setPlatformObj:_instance];
     return _instance;
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone
@@ -50,6 +51,14 @@ static RSinaWeiboManager* _instance = nil;
         _instance = [super allocWithZone:zone];
     });
     return _instance;
+}
+
+- (void)setPlatformObj:(id)obj {
+    [super setPlatformObj:obj];
+}
+
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKSina, [RRegister shared]);
 }
 
 - (void)sdkInitializeByAppKey:(NSString *)key appSecret:(NSString *)secret {
@@ -124,7 +133,7 @@ static RSinaWeiboManager* _instance = nil;
         NSLog(@"新浪微博未安装");
         return;
     }
-    
+    _share = share;
     WBWebpageObject* obj = [WBWebpageObject object];
     obj.title = title;
     obj.objectID = objectID;
@@ -163,11 +172,11 @@ static RSinaWeiboManager* _instance = nil;
         } else {
             _share(RShareSDKSina, RShareResultFailure, @"发送失败");
         }
+        _share = nil;
     }
 }
 
 #pragma mark - WBMediaTransferProtocol -
-
 /**
  数据准备失败回调
  */
@@ -192,6 +201,7 @@ static RSinaWeiboManager* _instance = nil;
             errorInfo = @"参数准备错误";
         }
         _share(RShareSDKSina, RShareResultFailure, errorInfo);
+        _share = nil;
     }
 }
 

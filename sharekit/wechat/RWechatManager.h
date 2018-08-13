@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, RWXMiniProgramType){
 
 + (instancetype)shared;
 
+- (void)connect:(RConfiguration)c;
+
 /**
  * 初始化微信 SDK. https://open.weixin.qq.com/c
  **/

@@ -46,6 +46,13 @@
                                           thumbImageData:(NSData*)thumbImageData
                                               webpageURL:(NSString*)webpageURL
                                                    scene:(RQQShareScene)scene;
+// 文件
+- (SendMessageToQQReq*)getFileReqToQQWithFileData:(NSData*)fileData
+                                         fileName:(NSString*)fileName
+                                   thumbImageData:(NSData*)thumbImageData
+                                            title:(NSString*)title
+                                      description:(NSString*)description
+                                            scene:(RQQShareScene)scene;
 
 // ---------------- QQ 空间 ---------------------
 

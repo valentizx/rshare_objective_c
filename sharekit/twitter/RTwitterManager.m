@@ -38,6 +38,10 @@ static RTwitterManager* _instance = nil;
     return _instance;
 }
 
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKTwitter, [RRegister shared]);
+}
+
 - (RTwitterAuthHelper *)helper {
     if (!_helper) {
         _helper = [RTwitterAuthHelper shared];

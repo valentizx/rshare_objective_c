@@ -36,6 +36,10 @@ static RWhatsAppManager* _instance = nil;
     return _instance;
 }
 
+- (void)connect:(RConfiguration)c {
+    c(RShareSDKWhatsApp, [RRegister shared]);
+}
+
 - (void)shareText:(NSString *)text {
     
     if(![RPlatform isInstalled:RShareSDKWhatsApp]) {

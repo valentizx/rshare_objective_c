@@ -56,11 +56,13 @@ typedef NS_ENUM(NSInteger, Mode) {
 };
 
 typedef void (^RShareCompletion)(RShareSDKPlatform platform, ShareResult result, NSString* _Nullable errorInfo);
-typedef void (^onConfigure)(RShareSDKPlatform platform, RRegister* obj);
 
+typedef void (^RConfiguration)(RShareSDKPlatform platform, RRegister* obj);
 
 @interface RShare : NSObject
 
-- (void)connectPlatform:(onConfigure)configure;
+- (void)connect:(RConfiguration)c;
+
+- (void)setPlatformObj:(id)obj;
 
 @end

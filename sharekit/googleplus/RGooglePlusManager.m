@@ -33,6 +33,10 @@ static RGooglePlusManager* _instance = nil;
     return _instance;
 }
 
+-(void)connect:(RConfiguration)c {
+    c(RShareSDKGooglePlus, [RRegister shared]);
+}
+
 - (void)shareURL:(NSURL *)shareURL from:(UIViewController *)from {
     // Construct the Google+ share URL
     NSURLComponents* urlComponents = [[NSURLComponents alloc]

@@ -71,6 +71,21 @@
     return req;
 }
 
+
+- (SendMessageToQQReq*)getFileReqToQQWithFileData:(NSData*)fileData
+                                         fileName:(NSString*)fileName
+                                   thumbImageData:(NSData*)thumbImageData
+                                            title:(NSString*)title
+                                      description:(NSString*)description
+                                            scene:(RQQShareScene)scene {
+
+    QQApiFileObject* obj = [QQApiFileObject objectWithData:fileData previewImageData:thumbImageData title:title description:description];
+    obj.fileName = fileName;
+    [obj setCflag:scene];
+    SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:obj];
+    return req;
+}
+
 - (SendMessageToQQReq *)getTextReqToQZone:(NSString *)text {
     QQApiImageArrayForQZoneObject *obj = [QQApiImageArrayForQZoneObject objectWithimageDataArray:nil title:text extMap:nil];
     SendMessageToQQReq* req = [SendMessageToQQReq reqWithContent:obj];

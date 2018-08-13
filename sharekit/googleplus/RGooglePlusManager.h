@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+- (void)connect:(RConfiguration)c;
+
 
 /**
  分享链接到 Google +.
