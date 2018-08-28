@@ -202,6 +202,7 @@ static RSinaWeiboManager* _instance = nil;
         }
         _share(RShareSDKSina, RShareResultFailure, errorInfo);
         _share = nil;
+        _message = nil;
     }
 }
 

@@ -54,7 +54,7 @@ static NSString* _audioStreamURL = @"http://10.136.9.109/fcgi-bin/fcg_music_get_
 // 音频网页链接
 static NSString* _audioWebpageURL = @"http://url.cn/5tZF9KT";
 // 网络图片链接
-static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125.jpg";
+static NSString* _netImageURL = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1509086430,2757737602&fm=11&gp=0.jpg";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,6 +62,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     _videoURLLabel.text = @"1, 若分享本地视频, 请先点击「获取视频URL」按钮; \n2, 在分享本地视频的过程中, 注意 demo 中 localVideoURL 和 localVideoURL2 的区别⚠️.";
     
     _image = [UIImage imageNamed:@"c_1"];
+    
    
 }
 
@@ -74,7 +75,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
                            quote:_description
                          hashTag:_hashTag
                             from:self
-                            mode:ShareModeNative
+                            mode:ShareModeFeed
                       completion:^(RShareSDKPlatform platform, ShareResult result, NSString *errorInfo) {
                           if (result == RShareResultSuccess) {
                               NSLog(@"分享成功");
@@ -251,7 +252,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     NSData* pdfData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Liberation" ofType:@"pdf"]];
     NSString* pdfExt = @"pdf";
     
-    [manager shareFileWithData:[NSData dataWithContentsOfFile:[_videoFileURL path]] extension:@"mp4" title:_title thumbImage:_image scene:Favorite completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareFileWithData:[NSData dataWithContentsOfFile:[_videoFileURL path]] extension:@"mp4" title:_title thumbImage:_image scene:Session completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -283,7 +284,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
 
     UIImage* image = [UIImage imageNamed:@"c"];
-    [manager shareImage:@[image, image, image, image, image, image] text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareImage:@[image] text:_title toStory:YES completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -298,7 +299,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
     
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
     
-    [manager shareVideoWithLocalURL:_videoFileURL text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareVideoWithLocalURL:_videoFileURL text:_title toStory:YES completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -313,7 +314,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareWebWb:(id)sender {
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
 
-    [manager shareWebpageWithURL:_webpageURL objectID:@"id" title:_title description:_description thumbImage:[UIImage imageNamed:@"logo"] completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareWebpageWithURL:_webpageURL objectID:@"id" title:_title description:_description thumbImage:[UIImage imageNamed:@"c_2"] completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -326,7 +327,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 #pragma mark - QQ -
 - (IBAction)shareTextQq:(id)sender {
     RQqManager* manager = [RQqManager shared];
-    [manager shareTextToQQ:_title scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareTextToQQ:_description scene:RQQShareAutomatic completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -354,7 +355,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 - (IBAction)shareWebQq:(id)sender {
     
     RQqManager* manager = [RQqManager shared];
-    [manager shareWebpageToQQWithURL:_webpageURL title:_title description:_description thumbImage:_image scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareWebpageToQQWithURL:_webpageURL title:_title description:_description thumbImage:_image scene:RQQShareAutomatic completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -380,7 +381,7 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
 }
 - (IBAction)shareAudQq:(id)sender {
     RQqManager* manager = [RQqManager shared];
-    [manager shareAudioToQQWithStreamURL:_audioStreamURL title:_title description:_description thumbImage:_image webpageURL:_webpageURL scene:RQQShareDataline completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareAudioToQQWithStreamURL:_audioStreamURL title:_title description:_description thumbImage:_image webpageURL:_webpageURL scene:RQQShareAutomatic completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -527,6 +528,8 @@ static NSString* _netImageURL = @"http://photocdn.sohu.com/20151211/Img430920125
         NSLog(@"♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️%@", [self-> _videoAssetURL absoluteString]);
         
         NSLog(@"💛💛💛💛💛💛💛💛💛💛💛💛后缀名%@", self->_videoFileURL.path.extension);
+        
+      
     }];
     
 

@@ -8,6 +8,12 @@
 
 #import "RLineManager.h"
 
+@interface RLineManager()
+
+@property(strong, nonatomic) NSURL* lineURL;
+
+@end
+
 @implementation RLineManager
 
 static RLineManager* _instance = nil;
@@ -31,6 +37,11 @@ static RLineManager* _instance = nil;
     c (RShareSDKLine, [RRegister shared]);
 }
 
+
+static NSString* lineURLPrefix() {
+    return @"line://msg/";
+}
+
 - (void)shareText:(NSString *)text {
     
     if(![RPlatform isInstalled:RShareSDKLine]) {
@@ -38,13 +49,9 @@ static RLineManager* _instance = nil;
         return;
     }
     
-    NSString* textString =  [text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    
-    NSString* urlString = [NSString stringWithFormat:@"line://msg/text/?%@", textString];
-    
-    NSURL* url = [NSURL URLWithString:urlString];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+    _lineURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@text/?%@", lineURLPrefix(),[text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
+    if ([[UIApplication sharedApplication] canOpenURL:_lineURL]) {
+        [[UIApplication sharedApplication] openURL:_lineURL];
     }
     
 }
@@ -56,9 +63,9 @@ static RLineManager* _instance = nil;
     }
     UIPasteboard* p = [UIPasteboard generalPasteboard];
     [p setData:(UIImageJPEGRepresentation(image, 1)) forPasteboardType:@"public.jpeg"];
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"line://msg/image/%@", p.name]];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+    _lineURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@image/%@", lineURLPrefix(),p.name]];
+    if ([[UIApplication sharedApplication] canOpenURL: _lineURL]) {
+        [[UIApplication sharedApplication] openURL: _lineURL];
     }
 }
 

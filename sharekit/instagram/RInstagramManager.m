@@ -8,15 +8,7 @@
 
 #import "RInstagramManager.h"
 #import "RPlatform.h"
-#import <AssetsLibrary/AssetsLibrary.h>
-#import <Photos/Photos.h>
 
-@interface RInstagramManager()<UIDocumentInteractionControllerDelegate>
-
-@property(nonatomic, strong) UIDocumentInteractionController* dc;
-@property (nonatomic, strong) UIViewController* from;
-
-@end
 
 @implementation RInstagramManager
 
@@ -84,18 +76,5 @@ static NSURL* instagramLibraryURL() {
         [[UIApplication sharedApplication] openURL:instagramLibraryURL()];
     }
 }
-#pragma mark - UIDocumentInteractionController -
-- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller{
-    return _from;
-}
-
-- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller{
-    return _from.view;
-}
-
-- (CGRect)documentInteractionControllerRectForPreview:(UIDocumentInteractionController *)controller{
-    return _from.view.bounds;
-}
-
 
 @end
