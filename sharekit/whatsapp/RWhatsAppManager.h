@@ -9,7 +9,7 @@
 #import "RShare.h"
 NS_ASSUME_NONNULL_BEGIN
 /**
- * WhatsApp iOS 分享和 Android 不同, iOS 只能对单一的媒体类型分享, 不能同时图文共存, 并且分享图片需要借助 Share Extension.
+ * WhatsApp iOS 分享和 Android 不同, iOS 只能对单一的媒体类型分享, 不能同时图文共存, 并且分享图片需要借助 UIDocumentInteractionController.
  */
 @interface RWhatsAppManager : RShare
 

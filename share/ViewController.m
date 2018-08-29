@@ -75,7 +75,7 @@ static NSString* _netImageURL = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1
                            quote:_description
                          hashTag:_hashTag
                             from:self
-                            mode:ShareModeFeed
+                            mode:ShareModeNative
                       completion:^(RShareSDKPlatform platform, ShareResult result, NSString *errorInfo) {
                           if (result == RShareResultSuccess) {
                               NSLog(@"分享成功");
@@ -284,7 +284,7 @@ static NSString* _netImageURL = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
 
     UIImage* image = [UIImage imageNamed:@"c"];
-    [manager shareImage:@[image] text:_title toStory:YES completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareImage:@[image] text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -299,7 +299,7 @@ static NSString* _netImageURL = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1
     
     RSinaWeiboManager* manager = [RSinaWeiboManager shared];
     
-    [manager shareVideoWithLocalURL:_videoFileURL text:_title toStory:YES completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
+    [manager shareVideoWithLocalURL:_videoFileURL text:_title toStory:NO completion:^(RShareSDKPlatform platform, ShareResult result, NSString * _Nullable errorInfo) {
         if (result == RShareResultSuccess) {
             NSLog(@"分享成功");
         } else if (result == RShareResultCancel){
@@ -457,7 +457,7 @@ static NSString* _netImageURL = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1
     [[RWhatsAppManager shared]shareText:_description];
 }
 - (IBAction)shareImgWsa:(id)sender {
-    [[RWhatsAppManager shared]shareImage:_image from:self];;
+    [[RWhatsAppManager shared]shareImage:_image from:self];
 }
 #pragma mark - Google+ -
 - (IBAction)shareUrlGplus:(id)sender {

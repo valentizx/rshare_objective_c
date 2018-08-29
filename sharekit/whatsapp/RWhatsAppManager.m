@@ -46,9 +46,8 @@ static RWhatsAppManager* _instance = nil;
         NSLog(@"WhatsApp 未安装");
         return;
     }
-    
-    NSString * urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@", text];
-    NSURL * whatsappURL = [NSURL URLWithString:[urlWhats stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+    NSURL * whatsappURL = [NSURL URLWithString:[[NSString stringWithFormat:@"whatsapp://send?text=%@", text] stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     if ([[UIApplication sharedApplication] canOpenURL: whatsappURL]) {
         [[UIApplication sharedApplication] openURL: whatsappURL];
     }

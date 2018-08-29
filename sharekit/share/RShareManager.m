@@ -25,7 +25,7 @@
 
 @interface RShareManager()
 
-@property (nonatomic, strong) id platformObj;
+@property (nonatomic, strong) Class cls;
 
 @end
 
@@ -55,6 +55,7 @@ static RShareManager* _instance = nil;
                          from:(UIViewController *)from
                    completion:(RShareCompletion)completion {
     
+    _cls = [self getCls:channel];
     switch (channel) {
         case RShareChannelQQDataLine: {
             NSData* videoData = [NSData dataWithContentsOfFile:[content.videoFileURL path]];
@@ -107,6 +108,8 @@ static RShareManager* _instance = nil;
                      channel:(RShareChannel)channel
                         from:(UIViewController *)from
                   completion:(RShareCompletion)completion {
+    
+    _cls = [self getCls:channel];
     switch (channel) {
             
         case RShareChannelQQSession:
@@ -160,6 +163,8 @@ static RShareManager* _instance = nil;
                       channel:(RShareChannel)channel
                          from:(UIViewController *)from
                    completion:(RShareCompletion)completion {
+    
+    _cls = [self getCls:channel];
     switch (channel) {
             
         case RShareChannelQQSession:
@@ -234,6 +239,8 @@ static RShareManager* _instance = nil;
                        channel:(RShareChannel)channel
                           from:(UIViewController *)from
                     completion:(RShareCompletion)completion {
+    
+    _cls = [self getCls:channel];
     switch (channel) {
             
         case RShareChannelQQSession:
@@ -316,15 +323,16 @@ static RShareManager* _instance = nil;
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     
     SEL sel = @selector(application:openURL:options:);
-    
-    return ((BOOL(*)(id,SEL,id,id,id))objc_msgSend)(_platformObj, sel, application,url,options);
+    id obj = objc_msgSend(objc_msgSend(_cls, @selector(alloc)), @selector(init));
+    return ((BOOL(*)(id,SEL,id,id,id))objc_msgSend)(obj, sel, application,url,options);
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
+    id obj = objc_msgSend(objc_msgSend(_cls, @selector(alloc)), @selector(init));
     SEL sel = @selector(application:openURL:sourceApplication:annotation:);
     
-    return ((BOOL(*)(id,SEL,id,id,id,id))objc_msgSend)(_platformObj, sel, application,url,sourceApplication,annotation);
+    return ((BOOL(*)(id,SEL,id,id,id,id))objc_msgSend)(obj, sel, application,url,sourceApplication,annotation);
 }
 
 
@@ -339,5 +347,45 @@ static RShareManager* _instance = nil;
     [[RFacebookManager shared] applicationDidBecomeActive:application];
 }
 
+#pragma mark - 其他
 
+-(Class)getCls:(RShareChannel)channel {
+    switch (channel) {
+        case RShareChannelQQSession:
+        case RShareChannelQQFavorite:
+        case RShareChannelQQDataLine:
+        case RShareChannelQZone:
+            return RQqManager.class;
+            
+        case RShareChannelWechatSession:
+        case RShareChannelWechatFavorite:
+        case RShareChannelWechatTimeline:
+            return RWechatManager.class;
+            
+        case RShareChannelFacebookClient:
+        case RShareChannelFacebookBroswer:
+            return RFacebookManager.class;
+            
+        case RShareChannelTwitter:
+            return RTwitterManager.class;
+            
+        case RShareChannelSinaWeibo:
+        case RShareChannelSinaWeiboStory:
+           return RSinaWeiboManager.class;
+            
+        case RShareChannelLine:
+            return RLineManager.class;
+            
+        case RShareChannelInstagram:
+            return RInstagramManager.class;
+        case RShareChannelTumblr:
+            return RTumblrManager.class;
+        case RShareChannelPinterest:
+            return RPinterestManager.class;
+        case RShareChannelGooglePlus:
+            return RGooglePlusManager.class;
+        case RShareChannelWhatsApp:
+            return RWhatsAppManager.class;
+    }
+}
 @end

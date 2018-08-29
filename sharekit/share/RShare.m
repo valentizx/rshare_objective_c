@@ -13,8 +13,4 @@
 
 - (void)connect:(RConfiguration)c {}
 
-- (void)setPlatformObj:(id)obj {
-    [[RShareManager shared] setValue:obj forKey:@"platformObj"];
-}
-
 @end

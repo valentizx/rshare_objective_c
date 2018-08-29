@@ -21,7 +21,6 @@ static RPinterestManager* _instance = nil;
         _instance = [[[self class] alloc] init];
         
     });
-    [_instance setPlatformObj:_instance];
     return _instance;
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone
@@ -31,10 +30,6 @@ static RPinterestManager* _instance = nil;
         _instance = [super allocWithZone:zone];
     });
     return _instance;
-}
-
-- (void)setPlatformObj:(id)obj {
-    [super setPlatformObj:obj];
 }
 
 - (void)connect:(RConfiguration)c {

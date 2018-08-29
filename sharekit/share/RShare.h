@@ -63,6 +63,4 @@ typedef void (^RConfiguration)(RShareSDKPlatform platform, RRegister* obj);
 
 - (void)connect:(RConfiguration)c;
 
-- (void)setPlatformObj:(id)obj;
-
 @end

@@ -28,7 +28,6 @@ static RWechatManager* _instance = nil;
     dispatch_once(&onceToken, ^{
         _instance = [[[self class] alloc] init];
     });
-    [_instance setPlatformObj:_instance];
     return _instance;
 }
 + (instancetype)allocWithZone:(struct _NSZone *)zone
@@ -40,10 +39,6 @@ static RWechatManager* _instance = nil;
     return _instance;
 }
 
-
-- (void)setPlatformObj:(id)obj {
-    [super setPlatformObj:obj];
-}
 - (void)connect:(RConfiguration)c {
     c(RShareSDKWechat, [RRegister shared]);
 }

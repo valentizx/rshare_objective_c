@@ -22,7 +22,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     [[RShareManager shared] application:application didFinishLaunchingWithOptions:launchOptions];
     
     RPlatform* p = [RPlatform make:^(PlatformBuilder *builder) {
